@@ -1,0 +1,13 @@
+<section id="menu">
+    <h2>Cardápio</h2>
+    
+    <ul class="container">
+      <% for(let i = 0; i < pizzas.length; i++) { %>
+        <li class="card">
+          <img src="<%= pizzas[i].url %>" width="448" height="299" alt="<%= pizzas[i].title %>">
+          <h3><%= pizzas[i].title %></h3>
+          <p><%= pizzas[i].description %></p>
+        </li>
+      <% } %>
+    </ul>
+</section>

@@ -1,0 +1,38 @@
+<section id="menu">
+    <h2>Cardápio</h2>
+
+    <!-- Cadastrar pizzas -->
+    <form id="create-form" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
+      <input type="text" name="title" required placeholder="Título">
+      <br>
+
+      <input type="text" name="description" required placeholder="Descrição">
+      <br>
+
+      <input type="file" id="image" name="image" required>
+
+      <br>
+      <button type="submit">Enviar</button>
+    </form>
+    
+    <!-- Cardapio -->
+    <ul class="admin-container">
+      <% for(let i = 0; i < pizzas.length; i++) { %>
+        
+        <li class="admin-card">
+          <img src="<%= pizzas[i].url %>" width="448" height="299" alt="Imagem pizza <%= pizzas[i].title %>">
+
+          <div class="admin-content">
+            <h3><%= pizzas[i].title %></strong></h3>
+            <p><%= pizzas[i].description %></p>
+          </div>
+
+          <form class="delete-container" action="/api/pizzas/delete/<%= pizzas[i].id %>" method="post">
+            <button type="submit">Excluir</button>
+          </form>
+
+          <button class="update-btn">Atualizar</button>
+        </li>
+      <% } %>
+    </ul>
+</section>

@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int       @id @default(autoincrement())
+  name       String    @db.VarChar(255)
+  email      String    @unique @db.VarChar(255)
+  password   String    @db.VarChar(255)
+  phone      String    @unique @db.VarChar(255)
+  dayOfBirth DateTime?
+  role       UserRoles @default(Customer)
+  orders     Order[]
+  address    Address?
+}
+
+enum UserRoles {
+  Admin
+  Customer
+}
+
+model Address {
+  id           Int     @id @default(autoincrement())
+  cep          String  @db.VarChar(10)
+  state        String  @db.VarChar(255)
+  city         String  @db.VarChar(255)
+  neighborhood String  @db.VarChar(255)
+  road         String  @db.VarChar(255)
+  number       Int
+  complement   String?
+  userId       Int     @unique
+  user         User    @relation(fields: [userId], references: [id])
+}
+
+model Order {
+  id         Int           @id @default(autoincrement())
+  customerId Int
+  customer   User          @relation(fields: [customerId], references: [id])
+  total      Decimal       @db.Decimal(10, 2)
+  createdAt  DateTime      @default(now())
+  pizzas     OrderPizzas[]
+}
+
+model Pizza {
+  id             Int              @id @default(autoincrement())
+  title          String           @db.VarChar(255)
+  description    String
+  url            String           @db.VarChar(255)
+  orders         OrderPizzas[]
+  SizesAndPrices SizeAndPrice[]
+}
+
+model SizeAndPrice {
+  id      Int        @id @default(autoincrement())
+  price   Decimal    @db.Decimal(10, 2)
+  size    PizzaSizes
+  pizzaId Int
+  pizza   Pizza      @relation(fields: [pizzaId], references: [id])
+}
+
+model OrderPizzas {
+  pizzaId  Int
+  orderId  Int
+  quantity Int   @default(1)
+  pizza    Pizza @relation(fields: [pizzaId], references: [id])
+  order    Order @relation(fields: [orderId], references: [id])
+
+  @@id([pizzaId, orderId])
+}
+
+enum PizzaSizes {
+  P
+  M
+  G
+}

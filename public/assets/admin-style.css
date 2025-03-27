@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --coler-orange: #ff6702;
+    --color-primary: #ffa500;
+    --color-dark: #232323;
+    --color-light: #eaeaea;
+    --color-white: #fff;
+    --color-red: #ff0000;
+    --color-blue: #00bbff;
+}
+
+/* Estiliza o container do formulário "create"*/
+#create-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    max-width: 50vw;
+    margin: 3rem 30rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#create-form input,
+#create-form select {
+    padding: 0.5rem;
+    border: 1px solid var(--color-dark);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 11.3rem;
+    min-width: 7.5rem;
+}
+
+#create-form input[type="file"] {
+    width: 13.7rem;
+}
+
+#create-form button {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-weight: 700;
+    border: 0.2rem solid var(--color-dark);
+    padding: 9px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#create-form button:hover {
+    background-color: var(--coler-orange);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1440px) {
+    #create-form {
+        margin: 3rem 20rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    #create-form {
+        margin: 2rem 10rem;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        padding: 1rem;
+    }
+
+    #create-form input,
+    #create-form select,
+    #create-form input[type="file"] {
+        width: 9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #create-form {
+        margin: 1.5rem 5rem; 
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    #create-form input,
+    #create-form select,
+    #create-form input[type="file"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #create-form {
+        margin: 1rem 1rem; 
+        padding: 0.8rem;
+        gap: 0.5rem;
+    }
+
+    #create-form button {
+        width: 100%;
+    }
+}
+
+/* Menu Admin */
+
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.admin-card {
+    position: relative;
+    display: flex; 
+    align-items: center;
+    background-color: var(--color-light);
+    border-radius: .5rem;
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0.5rem;
+}
+
+.admin-card img {
+    border-radius: .5rem;
+    object-fit: cover;
+    width: 150px;
+    height: 100px;
+    margin-right: 2rem;
+}
+
+.admin-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 6rem;
+    flex: 1;
+}
+
+.admin-content h3,
+.admin-content p {
+    margin: 0;
+    padding: 0;
+}
+
+/* botao excluir*/
+
+.delete-container {
+    position: absolute;
+    top: 1rem;
+    right: 0.5rem;
+}
+
+.delete-container button {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-weight: 700;
+    border: 0.2rem solid var(--color-dark);
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.delete-container button:hover {
+    background-color: var(--color-red);
+}
+
+/* botao atualizar*/
+
+.update-btn {
+    position: absolute;
+    top: 3.9rem;
+    right: 0.5rem;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-weight: 700;
+    border: 0.2rem solid var(--color-dark);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.update-btn:hover {
+    background-color: var(--color-blue);
+}
