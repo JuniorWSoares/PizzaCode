@@ -6,7 +6,8 @@ export class PizzasApiController {
     index: Handler = async (req, res, next) => {
         try {
             const pizzas = await prisma.pizza.findMany({orderBy: {title: "asc"}})
-            res.json({pizzas})
+            const priceSize = await prisma.sizeAndPrice.findMany()
+            res.json({pizzas, priceSize})
         } catch (error) {
             next(error)
         }

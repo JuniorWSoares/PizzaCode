@@ -6,10 +6,11 @@ export class PizzasWebController {
             const response = await fetch("http://localhost:3000/api/pizzas")
             const dados = await response.json()
             const pizzas = dados.pizzas
+            const priceSize = dados.priceSize
 
             const user = {role: "Admin"}
 
-            res.render("index", {pizzas, user}) 
+            res.render("index", {pizzas, priceSize, user}) 
         } catch (error) {
             next(error)  
         }
