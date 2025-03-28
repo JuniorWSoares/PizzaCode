@@ -8,7 +8,7 @@ export class PizzasWebController {
             const pizzas = dados.pizzas
             const priceSize = dados.priceSize
 
-            const user = {role: "Admin"}
+            const user = {role: "Customer"}
 
             res.render("index", {pizzas, priceSize, user}) 
         } catch (error) {
