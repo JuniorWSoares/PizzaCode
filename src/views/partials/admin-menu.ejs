@@ -5,18 +5,18 @@
 
       <h3>Cadastrar Pizza</h3>
 
-      <form action="/api/pizzas/create" method="post" enctype="multipart/form-data">
+      <form class="pizza-form-container" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
         <input type="text" name="title" id="title" placeholder="Título" required>
         <input type="text" name="description" id="description" placeholder="Descrição" required>
         <input type="file" name="image" id="image" required>
-        <button type="submit">Enviar</button>
+        <button class="pizza-send-button" type="submit">Cadastrar</button>
       </form>
 
       <ul class="pizza-menu-container">
         
         <% for(let i = 0; i < pizzas.length; i++) { %>
           <li class="pizza-card">
-            <div class="left-side">
+            <div class="left-content">
               <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
               <div class="pizza-content">
                 <h3><%= pizzas[i].title %></h3>
@@ -25,9 +25,11 @@
             </div>
             <div class="buttons">
               <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post">
-
+                <button class="pizza-delete-button" type="submit"><i class="fi fi-br-cross"></i></button>
               </form>
-
+              <form action="api/pizzas/update/<%= pizzas[i].id %>" method="post">
+                <button class="pizza-update-button" type="submit"><i class="fi fi-br-refresh"></i></button>
+              </form>
             </div>
           </li>
         <% } %>
@@ -49,7 +51,7 @@
           <input type="text" name="price" id="price" placeholder="Preço" required>
         </div>
         
-        <button type="submit">Enviar</button>
+        <button class="pizza-send-button" type="submit">Cadastrar</button>
       </form>
 
       <div class="size-pizza-menu-container">

@@ -5,24 +5,24 @@
 }
 
 :root {
-    --color-orange: #ff6702;
+    --color-orange: #ff6600;
     --color-primary: #ffa500;
     --color-dark: #232323;
+    --color-grey: #cccccc;
     --color-light: #eaeaea;
     --color-white: #fff;
-    --color-red: #ff0000;
-    --color-blue: #00bbff;
+    --color-red: #a55a5a;
+    --color-blue: #9fc6d4;
 }
 
 /*Container principal*/
 #main-container{
     display: flex;
     margin-top: 4rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    background-color: var(--color-light);
     border: 3px solid var(--color-dark);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100vh;
 }
@@ -30,6 +30,7 @@
 #main-container > div{
     width: 100%;
     height: 100vh;
+    padding-bottom: 5rem;
 }
 
 /*Container do tipo de pizza*/
@@ -44,7 +45,7 @@
 }
 
 /*Container do formulario de pizza*/
-.pizza-type-container form{
+.pizza-form-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -72,8 +73,7 @@
     cursor: pointer;
 }
 
-.pizza-type-container button,
-.pizza-sized-container button {
+.pizza-send-button {
     background-color: var(--color-dark);
     color: var(--color-white);
     font-size: 1rem;
@@ -83,10 +83,9 @@
     cursor: pointer;
     padding: 0.5rem;
     transition: background 0.3s;
-}
+} 
 
-.pizza-type-container button:hover,
-.pizza-sized-container button:hover {
+.pizza-send-button:hover {
     background-color: var(--color-orange);
 }
 
@@ -105,11 +104,14 @@
 .pizza-card {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     align-items: center;
     height: auto;
     width: 100%;
     padding: 5px;
+    background-color: var(--color-white);
     border-bottom: 2px solid var(--color-dark);
+    text-align: left;
 }
 
 .pizza-card img{
@@ -118,11 +120,41 @@
     border-radius: 5px;
 }
 
+.left-content{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-right: 1rem;
+}
+
+.pizza-update-button,
+.pizza-delete-button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--color-dark);
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+}
+
+.pizza-delete-button:hover {
+    background-color: var(--color-grey);
+}
+
+.pizza-update-button:hover {
+    background-color: var(--color-grey);
+}
 
 .pizza-sized-container form {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 100%;
