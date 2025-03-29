@@ -1,35 +1,43 @@
 <section id="menu">
   <h2>Cardápio</h2>
   <div id="main-container">
-    <div class="pizza-type-container">
+    <div id="pizza-type-container">
 
       <h3>Cadastrar Pizza</h3>
 
-      <form class="pizza-form-container" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
+      <form id="pizza-type-form" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
         <input type="text" name="title" id="title" placeholder="Título" required>
         <input type="text" name="description" id="description" placeholder="Descrição" required>
         <input type="file" name="image" id="image" required>
         <button class="pizza-send-button" type="submit">Cadastrar</button>
       </form>
 
-      <ul class="pizza-menu-container">
+      <div id="update-pizza-type-container" hidden>
+        <form id="update-pizza-type-form" action="/api/pizzas/update/" method="post" enctype="multipart/form-data">
+          <input type="text" name="id" id="id" placeholder="ID" required>
+          <input type="text" name="title" id="title" placeholder="Título" required>
+          <input type="text" name="description" id="description" placeholder="Descrição" required>
+          <input type="file" name="image" id="image" required>
+          <button class="pizza-send-button" type="submit">Atualizar</button>
+        </form>
+      </div>
+
+      <ul id="pizza-menu-container">
         
         <% for(let i = 0; i < pizzas.length; i++) { %>
           <li class="pizza-card">
             <div class="left-content">
               <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
               <div class="pizza-content">
-                <h3><%= pizzas[i].title %></h3>
+                <h3><%= pizzas[i].title %> - ID: <%= pizzas[i].id %></h3>
                 <p><%= pizzas[i].description %></p>
               </div>
             </div>
-            <div class="buttons">
+            <div id="buttons">
               <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post">
                 <button class="pizza-delete-button" type="submit"><i class="fi fi-br-cross"></i></button>
               </form>
-              <form action="api/pizzas/update/<%= pizzas[i].id %>" method="post">
-                <button class="pizza-update-button" type="submit"><i class="fi fi-br-refresh"></i></button>
-              </form>
+              <button class="pizza-update-button" data-value="<%= pizzas[i].id %>"><i class="fi fi-br-refresh"></i></button>
             </div>
           </li>
         <% } %>
@@ -37,24 +45,24 @@
       </ul>
     </div>
 
-    <div class="pizza-sized-container">
+    <div id="pizza-sized-container">
       <h3>Cadastrar Tamanho e Preço</h3>
 
-      <form action="/api/pizzas/addSize" method="post" enctype="multipart/form-data">
+      <form id="pizza-sized-form" action="/api/pizzas/addSize" method="post" enctype="multipart/form-data">
         <div class="left-side">
           <select name="size" id="size">
             <option value="P">P</option>
             <option value="M">M</option>
             <option value="G">G</option>
           </select>
-          <input type="text" name="id" id="id" placeholder="Id da Pizza" required>
+          <input type="text" name="id" id="id" placeholder="ID" required>
           <input type="text" name="price" id="price" placeholder="Preço" required>
         </div>
         
         <button class="pizza-send-button" type="submit">Cadastrar</button>
       </form>
 
-      <div class="size-pizza-menu-container">
+      <div id="size-pizza-menu-container">
 
       </div>
     </div>
