@@ -213,7 +213,7 @@
 }
 
 #pizza-sized-form select {
-    width: 15%;
+    width: 12%;
     height: 90%;
     max-width: 25%;
     font-weight: 700;
@@ -224,18 +224,10 @@
     cursor: pointer;
 }
 
-#pizza-sized-form input {
-    width: 100%;
+#pizza-sized-form input{
+    width: 20%;
     height: 90%;
     max-width: 100%;
-    padding: 0.5rem;
-    border: 1px solid var(--color-dark);
-    border-radius: 5px;
-}
-
-#pizza-sized-form input:nth-child(2) {
-    width: 20%;
-    max-width: 20%;
     padding: 0.5rem;
     border: 1px solid var(--color-dark);
     border-radius: 5px;

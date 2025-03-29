@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { coerce, z } from "zod";
 
 export const CreatePizzaRequestSchema = z.object({
     title: z.string(),

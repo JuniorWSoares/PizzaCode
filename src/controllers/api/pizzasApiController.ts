@@ -1,6 +1,6 @@
 import { Handler } from "express";
 import { prisma } from "../../database";
-import { CreatePizzaRequestSchema } from "./schemas/pizzasRequestSchema";
+import { CreatePizzaRequestSchema} from "./schemas/pizzasRequestSchema";
 
 export class PizzasApiController {
     index: Handler = async (req, res, next) => {
@@ -29,6 +29,13 @@ export class PizzasApiController {
 
     update: Handler = async (req, res, next) => {
         try {
+            const {description, title} = CreatePizzaRequestSchema.parse(req.body)
+            const imageUrl = `/uploads/${req.file?.filename}`
+            const data = {description, title, url: imageUrl}
+
+            await prisma.pizza.update({ where: {id: Number(req.params.id)}, data })
+
+            res.redirect("/#menu")
         } catch (error) {
             next(error)
         }
