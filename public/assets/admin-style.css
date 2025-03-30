@@ -5,25 +5,24 @@
 }
 
 :root {
-    --dark-gray-color: #4A4A4A;
-    --medium-gray-color: #E0E0E0;
-    --light-gray-color: #F5F5F5;
+    --gray-100: #e7e7e7;
+    --gray-200: #d1d1d1;
+    --gray-800: #454545;
 
-
-    --color-orange: #ff6600;
-    --color-primary: #ffa500;
-    --color-dark: #232323;
-    --color-light: #F5F5F5;
-    --color-white: #fff;
+    --orange-color: #ff6600;
+    --primary-color: #ffa500;
+    --dark-color: #232323;
+    --light-color: #F5F5F5;
+    --white-color: #fff;
 }
 
 /*Container principal*/
 #main-container{
     display: flex;
     margin-top: 4rem;
-    background-color: var(--light-gray-color);
+    background-color: var(--light-color);
     border-radius: 10px;
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100vh;
 }
@@ -31,7 +30,7 @@
 #main-container > div{
     width: 100%;
     height: 100vh;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
 }
 
 /*Container do tipo de pizza*/
@@ -40,7 +39,7 @@
 #pizza-sized-container{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1.5rem;
     align-items: center;
 }
@@ -55,18 +54,18 @@
     max-width: 100%;
     height: auto;
     padding: 1rem;
-    border-radius: 10px;
-    background-color: var(--medium-gray-color);
-    border: 3px solid var(--color-dark);
+    border-radius: 5px;
+    background-color: var(--gray-100);
+    border: 1px solid var(--dark-color);
     gap: 2rem;
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
 }
 
 #pizza-type-form input{
     width: 25%;
     max-width: 25%;
     padding: 0.5rem;
-    border: 1px solid var(--color-dark);
+    border: 1px solid var(--dark-color);
     border-radius: 5px;
 }
 
@@ -76,11 +75,11 @@
 }
 
 .pizza-send-button {
-    background-color: var(--dark-gray-color);
-    color: var(--color-white);
+    background-color: var(--gray-800);
+    color: var(--white-color);
     font-size: 1rem;
     font-weight: 700;
-    border: 2px solid var(--color-dark);
+    border: 2px solid var(--dark-color);
     border-radius: 5px;
     cursor: pointer;
     padding: 0.5rem;
@@ -88,7 +87,7 @@
 } 
 
 .pizza-send-button:hover {
-    background-color: var(--color-dark);
+    background-color: var(--dark-color);
 }
 
 #update-pizza-type-container{
@@ -105,17 +104,17 @@
     max-width: 100%;
     height: auto;
     padding: 1rem;
-    border-radius: 10px;
-    border: 3px solid var(--color-dark);
-    background-color: var(--medium-gray-color);
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid var(--dark-color);
+    background-color: var(--gray-100);
+    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
 }
 
 #update-pizza-type-form input{
     width: 25%;
     max-width: 25%;
     padding: 0.5rem;
-    border: 1px solid var(--color-dark);
+    border: 1px solid var(--dark-color);
     border-radius: 5px;
 }
 
@@ -123,7 +122,7 @@
     width: 7%;
     max-width: 7%;
     padding: 0.5rem;
-    border: 1px solid var(--color-dark);
+    border: 1px solid var(--dark-color);
     border-radius: 5px;
 }
 
@@ -136,9 +135,9 @@
     overflow-y: auto;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    border: 2px solid var(--color-dark);
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid var(--dark-color);
+    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
 }
 
 .pizza-card {
@@ -149,13 +148,13 @@
     height: auto;
     width: 100%;
     padding: 5px;
-    background-color: var(--medium-gray-color);
-    border-bottom: 2px solid var(--color-dark);
+    background-color: var(--gray-100);
+    border-bottom: 1px solid var(--dark-color);
     text-align: left;
 }
 
 .pizza-card img{
-    border: 2px solid var(--color-dark);
+    border: 2px solid var(--dark-color);
     width: 10%;
     height: auto;
     border-radius: 5px;
@@ -180,18 +179,18 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid var(--color-dark);
+    border-radius: 10px;
+    border: 1px solid var(--dark-color);
     box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
     transition: background 0.3s;
 }
 
 .pizza-delete-button:hover {
-    background-color: var(--medium-gray-color);
+    background-color: var(--gray-200);
 }
 
 .pizza-update-button:hover {
-    background-color: var(--medium-gray-color);
+    background-color: var(--gray-200);
 }
 
 #pizza-sized-form {
@@ -201,10 +200,10 @@
     max-width: 100%;
     height: auto;
     padding: 1rem;
-    border-radius: 10px;
-    border: 3px solid var(--color-dark);
-    background-color: var(--medium-gray-color);
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid var(--dark-color);
+    background-color: var(--gray-100);
+    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
 }
 
 .left-side{
@@ -219,7 +218,7 @@
     font-weight: 700;
     font-size: 1rem;
     padding: 0.5rem;
-    border: 1px solid var(--color-dark);
+    border: 1px solid var(--dark-color);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -238,7 +237,7 @@
     overflow-y: auto;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    border: 2px solid var(--color-dark);
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid var(--color-dark);
+    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
 }
