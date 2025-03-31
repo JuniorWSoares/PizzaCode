@@ -178,11 +178,19 @@
 .pizza-delete-button {
     width: 40px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid var(--dark-color);
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    border: none;
+    background-color: var(--gray-100);
     transition: background 0.3s;
+}
+
+#buttons img {
+    width: 35px;
+    height: 35px;
+    border: none;
 }
 
 .pizza-delete-button:hover {

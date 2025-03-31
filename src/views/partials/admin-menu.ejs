@@ -23,7 +23,6 @@
       </div>
 
       <ul id="pizza-menu-container">
-        
         <% for(let i = 0; i < pizzas.length; i++) { %>
           <li class="pizza-card">
             <div class="left-content">
@@ -35,19 +34,18 @@
             </div>
             <div id="buttons">
               <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post">
-                <button class="pizza-delete-button" type="submit"><i class="fi fi-br-cross"></i></button>
+                <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
               <button 
                 class="pizza-update-button" 
                 data-id="<%= pizzas[i].id %>" 
                 data-title="<%= pizzas[i].title %>"
                 data-description="<%= pizzas[i].description %>">
-                <i class="fi fi-br-refresh"></i>
+                <img src="images/atualizar.png">
               </button>
             </div>
           </li>
         <% } %>
-
       </ul>
     </div>
 

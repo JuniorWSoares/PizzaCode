@@ -9,7 +9,6 @@ document.querySelectorAll(".pizza-update-button").forEach((btn)=>{
         id.value = btn.dataset.id
         title.value = btn.dataset.title
         description.value = btn.dataset.description
-
         
         document.getElementById("update-pizza-type-form").action = `/api/pizzas/update/${id.value}`
     })
