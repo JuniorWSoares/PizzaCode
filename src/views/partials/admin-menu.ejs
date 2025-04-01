@@ -7,18 +7,20 @@
 
       <!-- Formulário para cadastrar uma nova pizza -->
 
-      <form id="pizza-type-form" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
-        <input type="text" name="title" id="title" placeholder="Título" required>
-        <input type="text" name="description" id="description" placeholder="Descrição" required>
-        <input type="file" name="image" id="image" required>
-        <button class="pizza-send-button" type="submit">Cadastrar</button>
-      </form>
+      <div id="pizza-type-form-container">
+        <form id="pizza-type-form" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
+          <input type="text" name="title" id="title" placeholder="Título" required>
+          <input type="text" name="description" id="description" placeholder="Descrição" required>
+          <input type="file" name="image" id="image" required>
+          <button class="pizza-send-button" type="submit">Cadastrar</button>
+        </form>
+      </div>
 
       <!-- Formulário oculto para atualizar uma pizza existente -->
 
       <div id="update-pizza-type-container" hidden>
         <form id="update-pizza-type-form" action="" method="post" enctype="multipart/form-data">
-          <input type="text" name="id" id="id" placeholder="ID" required>
+          <input type="text" name="id" id="id" placeholder="ID" required hidden>
           <input type="text" name="title" id="updated-title" placeholder="Título" required>
           <input type="text" name="description" id="updated-description" placeholder="Descrição" required>
           <input type="file" name="image" id="updated-image" required>

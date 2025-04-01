@@ -9,7 +9,8 @@
     --gray-200: #d1d1d1;
     --gray-800: #454545;
 
-    --blue-color: #0004d5;
+    --blue-color: #b3c8d1;
+    --size-solor: #478db0;
     --orange-color: #ff6600;
     --primary-color: #ffa500;
     --dark-color: #232323;
@@ -46,7 +47,8 @@
 }
 
 /*Container do formulario de pizza*/
-#pizza-type-form {
+#pizza-type-form,
+#update-pizza-type-form {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -91,25 +93,10 @@
     background-color: var(--dark-color);
 }
 
+#pizza-type-form-container,
 #update-pizza-type-container,
 #update-pizza-size-container {
     width: 100%;
-}
-
-#update-pizza-type-form{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid var(--dark-color);
-    background-color: var(--gray-100);
-    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
 }
 
 #update-pizza-type-form input{
@@ -191,6 +178,13 @@
     border: none;
     background-color: var(--gray-100);
     transition: background 0.3s;
+}
+
+.pizza-card.highlight,
+.pizza-update-button.highlight,
+.pizza-delete-button.highlight {
+    background-color: var(--blue-color);
+    transition: background-color 0.3s ease;
 }
 
 .buttons button img {
@@ -275,5 +269,5 @@
 }
 
 #size-color{
-    color: var(--blue-color);
+    color: var(--size-solor);
 }

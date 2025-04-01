@@ -1,5 +1,16 @@
 document.querySelectorAll(".pizza-update-button").forEach((btn)=>{
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (ev) => {
+
+        const pizzaCard = ev.target.closest(".pizza-card")
+        const updatedButton = ev.target.closest("button")
+        const deletedButton = pizzaCard.querySelector(".pizza-delete-button")
+
+        pizzaCard.classList.toggle("highlight")
+        updatedButton.classList.toggle("highlight")
+        deletedButton.classList.toggle("highlight")
+
+
+        document.getElementById("pizza-type-form-container").setAttribute("hidden", true);
         document.getElementById("update-pizza-type-container").removeAttribute("hidden")
 
         const id = document.getElementById("id")
