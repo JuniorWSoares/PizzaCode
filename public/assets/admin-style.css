@@ -9,6 +9,7 @@
     --gray-200: #d1d1d1;
     --gray-800: #454545;
 
+    --blue-color: #0004d5;
     --orange-color: #ff6600;
     --primary-color: #ffa500;
     --dark-color: #232323;
@@ -90,7 +91,8 @@
     background-color: var(--dark-color);
 }
 
-#update-pizza-type-container{
+#update-pizza-type-container,
+#update-pizza-size-container {
     width: 100%;
 }
 
@@ -129,7 +131,8 @@
 
 
 /* Menu das pizzas cadastradas */
-#pizza-menu-container{
+#pizza-menu-container,
+#size-pizza-menu-container {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -140,7 +143,8 @@
     box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
 }
 
-.pizza-card {
+.pizza-card,
+.pizza-size-card {
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -162,11 +166,12 @@
 
 .left-content{
     display: flex;
+    align-items: center;
     width: 100%;
     gap: 10px;
 }
 
-#buttons{
+.buttons{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,7 +180,8 @@
 }
 
 .pizza-update-button,
-.pizza-delete-button {
+.pizza-delete-button,
+.pizza-size-update-button {
     width: 40px;
     height: 40px;
     display: flex;
@@ -187,21 +193,20 @@
     transition: background 0.3s;
 }
 
-#buttons img {
+.buttons button img {
     width: 35px;
     height: 35px;
     border: none;
 }
 
-.pizza-delete-button:hover {
+.pizza-delete-button:hover,
+.pizza-update-button:hover,
+.pizza-size-update-button:hover {
     background-color: var(--gray-200);
 }
 
-.pizza-update-button:hover {
-    background-color: var(--gray-200);
-}
-
-#pizza-sized-form {
+#pizza-sized-form,
+#update-pizza-size-form {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -222,7 +227,6 @@
 #pizza-sized-form select {
     width: 12%;
     height: 90%;
-    max-width: 25%;
     font-weight: 700;
     font-size: 1rem;
     padding: 0.5rem;
@@ -231,8 +235,28 @@
     cursor: pointer;
 }
 
-#pizza-sized-form input{
-    width: 20%;
+#pizza-sized-form input {
+    width: 15%;
+    height: 90%;
+    max-width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+}
+
+#update-pizza-size-form select {
+    width: 22%;
+    height: 90%;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#update-pizza-size-form input {
+    width: 26%;
     height: 90%;
     max-width: 100%;
     padding: 0.5rem;
@@ -240,12 +264,16 @@
     border-radius: 5px;
 }
 
-/* Menu das pizzas cadastradas */
-#size-pizza-menu-container{
-    overflow-y: auto;
-    width: 100%;
-    height: 100%;
+
+/* Menu dos tamanhos das pizzas cadastradas */
+
+.pizza-size-card img{
+    border: 2px solid var(--dark-color);
+    width: 5%;
+    height: 5%;
     border-radius: 5px;
-    border: 1px solid var(--color-dark);
-    box-shadow: 0 4px 12px -1px rgba(0, 0, 0, 0.5);
+}
+
+#size-color{
+    color: var(--blue-color);
 }

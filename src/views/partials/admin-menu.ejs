@@ -5,37 +5,49 @@
 
       <h3>Cadastrar Pizza</h3>
 
+      <!-- Formulário para cadastrar uma nova pizza -->
+
       <form id="pizza-type-form" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
-        <input type="text" name="title" id="title-create" placeholder="Título" required>
-        <input type="text" name="description" id="description-create" placeholder="Descrição" required>
-        <input type="file" name="image" id="image-create" required>
+        <input type="text" name="title" id="title" placeholder="Título" required>
+        <input type="text" name="description" id="description" placeholder="Descrição" required>
+        <input type="file" name="image" id="image" required>
         <button class="pizza-send-button" type="submit">Cadastrar</button>
       </form>
+
+      <!-- Formulário oculto para atualizar uma pizza existente -->
 
       <div id="update-pizza-type-container" hidden>
         <form id="update-pizza-type-form" action="" method="post" enctype="multipart/form-data">
           <input type="text" name="id" id="id" placeholder="ID" required>
-          <input type="text" name="title" id="title-update" placeholder="Título" required>
-          <input type="text" name="description" id="description-update" placeholder="Descrição" required>
-          <input type="file" name="image" id="image-update" required>
+          <input type="text" name="title" id="updated-title" placeholder="Título" required>
+          <input type="text" name="description" id="updated-description" placeholder="Descrição" required>
+          <input type="file" name="image" id="updated-image" required>
           <button class="pizza-send-button" type="submit">Atualizar</button>
         </form>
       </div>
+
+      <!-- Lista de pizzas cadastradas -->
 
       <ul id="pizza-menu-container">
         <% for(let i = 0; i < pizzas.length; i++) { %>
           <li class="pizza-card">
             <div class="left-content">
               <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
-              <div class="pizza-content">
+              <div>
                 <h3><%= pizzas[i].title %> - ID: <%= pizzas[i].id %></h3>
                 <p><%= pizzas[i].description %></p>
               </div>
             </div>
-            <div id="buttons">
+            <div class="buttons">
+
+              <!-- Botão para excluir pizza -->
+
               <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
+
+              <!-- Botão para atualizar pizza -->
+
               <button 
                 class="pizza-update-button" 
                 data-id="<%= pizzas[i].id %>" 
@@ -52,23 +64,78 @@
     <div id="pizza-sized-container">
       <h3>Cadastrar Tamanho e Preço</h3>
 
-      <form id="pizza-sized-form" action="/api/pizzas/addSize" method="post" enctype="multipart/form-data">
+      <!-- Formulário para cadastrar tamanhos e preços das pizzas -->
+
+      <form id="pizza-sized-form" action="/api/pizzas/addSize" method="post">
         <div class="left-side">
           <select name="size" id="size">
             <option value="P">P</option>
             <option value="M">M</option>
             <option value="G">G</option>
           </select>
-          <input type="text" name="id" id="id" placeholder="ID" required>
+          <input type="text" name="pizzaId" id="pizzaId" placeholder="ID" required>
           <input type="text" name="price" id="price" placeholder="Preço" required>
         </div>
         
         <button class="pizza-send-button" type="submit">Cadastrar</button>
       </form>
 
-      <div id="size-pizza-menu-container">
+      <!-- Formulário oculto para atualizar tamanho e preço -->
 
+      <div id="update-pizza-size-container" hidden>
+        <form id="update-pizza-size-form" action="" method="post">
+          <div class="left-side">
+            <select name="size" id="updated-size">
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+            </select>
+            <input type="text" name="price" id="updated-price" placeholder="Preço" required>
+            <input type="text" name="id" id="size-id" hidden>
+          </div>
+          <button class="pizza-send-button" type="submit">Atualizar</button>
+        </form>
       </div>
+
+      <!-- Lista de tamanhos e preços cadastrados -->
+
+      <ul id="size-pizza-menu-container">
+        <% for(let i = 0; i < pizzas.length; i++) { %>
+          <% for(let j = 0; j < pizzas[i].PizzaSizes.length; j++) { %>
+          <li class="pizza-size-card">
+            <div class="left-content">
+              <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
+              <div>
+                <h3> 
+                  <span id="size-color"><%= pizzas[i].PizzaSizes[j].size %> </span> -
+                  <%= pizzas[i].title %> - 
+                  R&dollar; <%= pizzas[i].PizzaSizes[j].price %>
+                </h3>
+              </div>
+            </div>
+
+            <div class="buttons">
+
+              <!-- Botão para excluir tamanho e preço -->
+
+              <form action="api/pizzas/delete-size/<%= pizzas[i].PizzaSizes[j].id %>" method="post" >
+                <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
+              </form>
+
+              <!-- Botão para atualizar tamanho e preço -->
+               
+              <button 
+                class="pizza-size-update-button" 
+                data-id="<%= pizzas[i].PizzaSizes[j].id %>"
+                data-size="<%= pizzas[i].PizzaSizes[j].size %>" 
+                data-price="<%= pizzas[i].PizzaSizes[j].price %>">
+                <img src="images/atualizar.png">
+              </button>
+            </div>
+          </li>
+          <% } %>
+        <% } %>
+      </ul>
     </div>
   </div>
 </section>

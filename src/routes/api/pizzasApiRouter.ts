@@ -7,7 +7,10 @@ const pizzasApiController = new PizzasApiController()
 
 router.get("/", pizzasApiController.index)
 router.post("/create", upload.single('image'), pizzasApiController.create)
+router.post("/addSize", pizzasApiController.addSize)
 router.post("/delete/:id", pizzasApiController.delete)
 router.post("/update/:id", upload.single('image'), pizzasApiController.update)
+router.post("/update-size/:id", pizzasApiController.updateSize)
+router.post("/delete-size/:id", pizzasApiController.deleteSize)
 
 export = router

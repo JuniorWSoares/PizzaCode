@@ -53,20 +53,20 @@ model Order {
 }
 
 model Pizza {
-  id             Int              @id @default(autoincrement())
-  title          String           @db.VarChar(255)
-  description    String
-  url            String           @db.VarChar(255)
-  orders         OrderPizzas[]
-  SizesAndPrices SizeAndPrice[]
+  id          Int           @id @default(autoincrement())
+  title       String        @db.VarChar(255)
+  description String
+  url         String        @db.VarChar(255)
+  orders      OrderPizzas[]
+  PizzaSizes  PizzaSize[]
 }
 
-model SizeAndPrice {
+model PizzaSize {
   id      Int        @id @default(autoincrement())
   price   Decimal    @db.Decimal(10, 2)
-  size    PizzaSizes
+  size    PizzaSizesEnum
   pizzaId Int
-  pizza   Pizza      @relation(fields: [pizzaId], references: [id])
+  pizza   Pizza      @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
 }
 
 model OrderPizzas {
@@ -79,7 +79,7 @@ model OrderPizzas {
   @@id([pizzaId, orderId])
 }
 
-enum PizzaSizes {
+enum PizzaSizesEnum {
   P
   M
   G
