@@ -49,8 +49,11 @@ nav a {
 }
 
 .hero {
-    background-image: url("/images/pexels-narda-yescas-1566837.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0)), 
+        url(../images/pexels-narda-yescas-1566837.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
     color: var(--color-white);
     min-height: 75vh;
     padding: 10rem 0;
@@ -96,16 +99,29 @@ p {
     font-size: 1.25rem;
 }
 
+
+#menu{
+    background: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0)),
+        linear-gradient(to top, rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0)), 
+        url(../images/floor-1256804_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
 #menu > h2{
     font-family: "Rubik Dirt", system-ui;
     font-weight: 400;
     font-style: normal;
-    color: #000000;
+    color: #ffffff;
 }
 
 .container {
     display: flex;
     justify-content: center;
+    margin: 4rem auto;
     gap: 20px;
     flex-wrap: wrap; 
     list-style: none;
@@ -115,7 +131,7 @@ p {
 .card{
     background-color: var(--color-light);
     border-radius: .5rem;
-    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px 15px rgba(0, 0, 0, 0.5);
     text-align: left;
     margin: 1.5rem;
     height: 30rem;
@@ -135,12 +151,10 @@ p {
 }
 
 #about {
-    background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-    ),
-    url("/images/pexels-eneida-nieves-905847.jpg");
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.600), rgba(0, 0, 0, 0)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.947), rgba(0, 0, 0, 0)),
+        url("/images/pexels-eneida-nieves-905847.jpg"); 
     background-size: cover;
     background-position: center;
     color: var(--color-white);
