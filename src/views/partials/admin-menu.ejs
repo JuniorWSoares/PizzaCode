@@ -44,7 +44,7 @@
 
               <!-- Botão para excluir pizza -->
 
-              <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post">
+              <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esta pizza?')">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
 
@@ -122,7 +122,7 @@
 
               <!-- Botão para excluir tamanho e preço -->
 
-              <form action="api/pizzas/delete-size/<%= pizzas[i].PizzaSizes[j].id %>" method="post" >
+              <form action="api/pizzas/delete-size/<%= pizzas[i].PizzaSizes[j].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este tamanho?')">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
 
