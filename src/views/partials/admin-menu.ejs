@@ -68,19 +68,21 @@
 
       <!-- Formulário para cadastrar tamanhos e preços das pizzas -->
 
-      <form id="pizza-sized-form" action="/api/pizzas/addSize" method="post">
-        <div class="left-side">
-          <select name="size" id="size">
-            <option value="P">P</option>
-            <option value="M">M</option>
-            <option value="G">G</option>
-          </select>
-          <input type="text" name="pizzaId" id="pizzaId" placeholder="ID" required>
-          <input type="text" name="price" id="price" placeholder="Preço" required>
-        </div>
+      <div id="pizza-sized-form-container">
+        <form id="pizza-sized-form" action="/api/pizzas/addSize" method="post">
+          <div class="left-side">
+            <select name="size" id="size">
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+            </select>
+            <input type="text" name="pizzaId" id="pizzaId" placeholder="ID" required>
+            <input type="text" name="price" id="price" placeholder="Preço" required>
+          </div>
         
-        <button class="pizza-send-button" type="submit">Cadastrar</button>
-      </form>
+          <button class="pizza-send-button" type="submit">Cadastrar</button>
+        </form>
+      </div>
 
       <!-- Formulário oculto para atualizar tamanho e preço -->
 

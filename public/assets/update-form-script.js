@@ -9,7 +9,6 @@ document.querySelectorAll(".pizza-update-button").forEach((btn)=>{
         updatedButton.classList.toggle("highlight")
         deletedButton.classList.toggle("highlight")
 
-
         document.getElementById("pizza-type-form-container").setAttribute("hidden", true);
         document.getElementById("update-pizza-type-container").removeAttribute("hidden")
 
@@ -28,7 +27,17 @@ document.querySelectorAll(".pizza-update-button").forEach((btn)=>{
 })
 
 document.querySelectorAll(".pizza-size-update-button").forEach((btn)=>{
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (ev) => {
+
+        const pizzaSizeCard = ev.target.closest(".pizza-size-card")
+        const updatedButton = ev.target.closest("button")
+        const deletedButton = pizzaSizeCard.querySelector(".pizza-delete-button")
+
+        pizzaSizeCard.classList.toggle("highlight")
+        deletedButton.classList.toggle("highlight")
+        updatedButton.classList.toggle("highlight")
+
+        document.getElementById("pizza-sized-form-container").setAttribute("hidden", true)
         document.getElementById("update-pizza-size-container").removeAttribute("hidden")
 
         const size = document.getElementById("updated-size")

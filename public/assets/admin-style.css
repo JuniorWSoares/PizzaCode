@@ -10,7 +10,7 @@
     --gray-800: #454545;
 
     --blue-color: #b3c8d1;
-    --size-solor: #478db0;
+    --size-solor: #2b00ff;
     --orange-color: #ff6600;
     --primary-color: #ffa500;
     --dark-color: #232323;
@@ -95,7 +95,8 @@
 
 #pizza-type-form-container,
 #update-pizza-type-container,
-#update-pizza-size-container {
+#update-pizza-size-container,
+#pizza-sized-form-container {
     width: 100%;
 }
 
@@ -182,7 +183,9 @@
 
 .pizza-card.highlight,
 .pizza-update-button.highlight,
-.pizza-delete-button.highlight {
+.pizza-delete-button.highlight,
+.pizza-size-card.highlight,
+.pizza-size-update-button.highlight {
     background-color: var(--blue-color);
     transition: background-color 0.3s ease;
 }
