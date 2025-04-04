@@ -7,7 +7,6 @@ import pizzasApiRouter from "./routes/api/pizzasApiRouter"
 import pizzasWebRouter from "./routes/web/pizzasWebRouter"
 import { errorHandler } from "./middlewares/error-middleware"
 
-
 const app = express()
 
 app.use(express.static("public"))

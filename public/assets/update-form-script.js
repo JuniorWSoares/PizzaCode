@@ -5,6 +5,19 @@ document.querySelectorAll(".pizza-update-button").forEach((btn)=>{
         const updatedButton = ev.target.closest("button")
         const deletedButton = pizzaCard.querySelector(".pizza-delete-button")
 
+        if (pizzaCard.classList.contains("highlight")) {
+            location.reload() 
+            return
+        }
+
+        document.querySelectorAll(".pizza-card").forEach(card => {
+            if(card.classList.contains("highlight")){
+                card.classList.remove("highlight")
+                card.querySelector(".pizza-update-button").classList.remove("highlight")
+                card.querySelector(".pizza-delete-button").classList.remove("highlight")
+            }
+        })
+
         pizzaCard.classList.toggle("highlight")
         updatedButton.classList.toggle("highlight")
         deletedButton.classList.toggle("highlight")
@@ -32,6 +45,19 @@ document.querySelectorAll(".pizza-size-update-button").forEach((btn)=>{
         const pizzaSizeCard = ev.target.closest(".pizza-size-card")
         const updatedButton = ev.target.closest("button")
         const deletedButton = pizzaSizeCard.querySelector(".pizza-delete-button")
+
+        if (pizzaSizeCard.classList.contains("highlight")) {
+            location.reload() 
+            return
+        }
+
+        document.querySelectorAll(".pizza-size-card").forEach(card => {
+            if(card.classList.contains("highlight")){
+                card.classList.remove("highlight")
+                card.querySelector(".pizza-size-update-button").classList.remove("highlight")
+                card.querySelector(".pizza-delete-button").classList.remove("highlight")
+            }
+        })
 
         pizzaSizeCard.classList.toggle("highlight")
         deletedButton.classList.toggle("highlight")
