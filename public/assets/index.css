@@ -33,82 +33,11 @@ a{
     color: var(--primary-color);
 }
 
-header {
-    background-color: var(--black-color);
-    color: var(--white-color);
-    padding: 1.5rem 0;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-}
-
-nav li {
-    display: inline;
-    margin: 0 1.5rem;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.5s;
-}
-
-nav a:hover{
-    color: var(--orange-color);
-}
-
 h2{
     font-family: "Rubik Dirt", system-ui;
     font-weight: 400;
     font-style: normal;
     color: var(--white-color);
-}
-
-.hero {
-    background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0)),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0)),
-        url(../images/pexels-narda-yescas-1566837.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    color: var(--white-color);
-    min-height: 75vh;
-    padding: 10rem 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 4rem;
-    /* font-weight: 100; */
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.cta-button {
-    background-color: var(--primary-color);
-    box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.828);
-    border-radius: 10px;
-    color: var(--dark-color);
-    display: inline-block;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background 0.5s;
-}
-
-.cta-button:hover{
-    background-color: var(--orange-color);
 }
 
 section:not(#home, #contact) {
@@ -123,94 +52,6 @@ h2 {
 
 p {
     font-size: 1.1rem;
-}
-
-
-#menu{
-    background: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.750), rgba(0, 0, 0, 0)),
-        linear-gradient(to top, rgba(0, 0, 0, 0.750), rgba(0, 0, 0, 0)), 
-        url(../images/floor-1256804_1280.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    margin: 4rem auto;
-    gap: 30px;
-    flex-wrap: wrap; 
-    list-style: none;
-    padding: 0;
-}
-
-.card{
-    background-color: var(--light-color);
-    border-radius: .5rem;
-    box-shadow: 0 4px 12px 15px rgba(0, 0, 0, 0.5);
-    text-align: left;
-    margin: 1.5rem;
-    height: 26rem;
-    width: 24rem;
-}
-
-.card img {
-    border-top-left-radius: .5rem;
-    border-top-right-radius: .5rem;
-    object-fit: cover;
-    width: 100%;
-}
-
-.container h3,
-.container p {
-    padding: 0.5rem 1.25rem 0;
-}
-
-#about {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    height: 80vh;
-    background-color: var(--black-color);
-    color: var(--white-color);
-    overflow: hidden;
-}
-
-#about img {
-    box-shadow: 5px 5px 20px -1px rgba(225, 49, 0, 0.764);
-    border-top-left-radius: 4rem;
-    border-bottom-right-radius: 4rem;
-    object-position: center;
-    float: left;
-    height: 30rem;
-    width: 25rem;
-}
-
-#about-text-container{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 1000px;
-
-    h2{
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        font-family: "Rubik Dirt", system-ui;
-        font-weight: 400;
-        font-style: normal;
-    }
-
-    p{
-        font-size: 2.5rem;
-        font-family: "Rochester", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
 }
 
 address {

@@ -1,0 +1,68 @@
+:root {
+    --orange-color: #e65c00;
+    --primary-color: #ffa500;
+    --dark-color: #232323;
+    --light-color: #eaeaea;
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+#login-form, #register-form {
+    text-align: center;
+    padding: 30px;
+    width: 300px;
+}
+
+#login-form h3, #register-form h3 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+#login-form input, #register-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid var(--light-color);
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+#login-form button, #register-form button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 11px 12px;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--white-color);
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.5s;
+}
+
+#login-form button:hover, #register-form button:hover {
+    background-color: var(--orange-color);
+}
+
+#login-form p, #register-form p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+}
+
+#show-register, #show-login {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.5s;
+}
+
+#show-register:hover, #show-login:hover {
+    color: var(--orange-color)
+}
+
+.hidden {
+    display: none;
+}

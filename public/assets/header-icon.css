@@ -1,0 +1,10 @@
+.header-icons {
+    position: absolute;
+    right: 2rem;
+    display: flex; 
+    gap: 1rem;
+}
+.header-icons img {
+    width: 30px;
+    height: 30px;
+}

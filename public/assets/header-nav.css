@@ -1,0 +1,45 @@
+:root {
+    --orange-color: #e65c00;
+    --primary-color: #ffa500;
+    --dark-color: #232323;
+    --light-color: #eaeaea;
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+header {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+  
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 2rem;
+} 
+  
+.nav-links li a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links li a:hover {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--orange-color);
+    transition: color 0.5s;
+}

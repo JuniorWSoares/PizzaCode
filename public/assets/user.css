@@ -1,0 +1,68 @@
+:root {
+    --orange-color: #e65c00;
+    --primary-color: #ffa500;
+    --dark-color: #232323;
+    --light-color: #eaeaea;
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+.user {
+    position: relative;
+    display: inline-block;
+}
+
+.user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.user img:hover {
+    transform: scale(1.1);
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top:40px;
+    right: 0;
+    background-color: var(--white-color);
+    box-shadow: 0px 0 12px 5px rgb(0, 0, 0);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 220px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+#menu-options a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--dark-color);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#menu-options a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.user-menu a i {
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.user-menu a:hover i {
+    color: var(--white-color);
+}
+
+.show {
+    display: block;
+}

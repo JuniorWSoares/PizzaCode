@@ -6,19 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alessio's Pizzaria</title>
   <script src="/assets/update-form-script.js" defer></script>
+  <script src="/assets/registration-script.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="/assets/index.css">
   <link rel="stylesheet" href="/assets/admin-style.css">
+  <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/menu.css">
+  <link rel="stylesheet" href="/assets/header-nav.css">
+  <link rel="stylesheet" href="/assets/about.css">
+  <link rel="stylesheet" href="/assets/user.css">
+  <link rel="stylesheet" href="/assets/login-register.css">
+  <link rel="stylesheet" href="/assets/header-icon.css">
+  <link rel="stylesheet" href="/assets/cart.css">
+  
+  <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
 </head>
 
 <body>
   <header>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Cardápio</a></li>
         <li><a href="#about">Sobre Nós</a></li>
         <li><a href="#contact">Contato</a></li>
       </ul>
+
+      <div class="header-icons">
+        <div class="user">
+          <img src="/images/user.png" alt="Perfil" id="user-icon">
+          <div class="user-menu" id="user-menu">
+            <div id="menu-options">
+              <a href="#" id="login-button"><i class="fas fa-sign-in-alt"></i> Login</a>
+              <a href="#enderecos"><i class="fas fa-map-marker-alt"></i> Endereços</a>
+            </div>
+        
+            <!-- Formulário de Login -->
+            <div id="login-form" class="hidden">
+              <h3>Login</h3>
+              <input type="email" id="login-email" placeholder="Digite seu e-mail">
+              <input type="password" id="login-password" placeholder="Digite sua senha">
+              <button onclick="submitLogin()">Entrar</button>
+              <p>Não tem uma conta? <a href="#" id="show-register">Cadastrar-se</a></p>
+            </div>
+        
+            <!-- Formulário de Cadastro -->
+            <div id="register-form" class="hidden">
+              <h3>Cadastro</h3>
+              <input type="text" id="name" placeholder="Nome Completo">
+              <input type="date" id="birthdate">
+              <input type="email" id="register-email" placeholder="Crie seu e-mail">
+              <input type="password" id="register-password" placeholder="Crie uma senha">
+              <input type="tel" id="phone" placeholder="Telefone">
+              <button onclick="submitRegister()">Cadastrar</button>
+              <p>Já tem uma conta? <a href="#" id="show-login">Fazer login</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cart">
+          <img src="/images/shopping-cart.png" alt="Carrinho de Compras">
+        </div>
+      </div>
     </nav>
   </header>
 
