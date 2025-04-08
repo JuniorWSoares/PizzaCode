@@ -7,6 +7,19 @@
           <img src="<%= pizzas[i].url %>" width="448" height="260" alt="<%= pizzas[i].title %>">
           <h3><%= pizzas[i].title %></h3>
           <p><%= pizzas[i].description %></p>
+          <div class="order-container hidden" >
+            <form action="/api/orders" method="post">
+              <h4>Escolha o tamanho:</h4>
+              
+              <% for(let j = 0; j < pizzas[i].PizzaSizes.length; j++) { %>
+                <label for="<%= pizzas[i].title %>-size-<%= pizzas[i].PizzaSizes[j].size %>">
+                  <input type="radio" id="<%= pizzas[i].title %>-size-<%= pizzas[i].PizzaSizes[j].size %>" name="size" value="<%= pizzas[i].PizzaSizes[j].size %>">
+                  <%= pizzas[i].PizzaSizes[j].size %> - R$ <%= pizzas[i].PizzaSizes[j].price %>
+                </label>
+              <% } %>
+              <button type="submit">Pedir</button>
+            </form>
+          </div>
         </li>
       <% } %>
     </ul>

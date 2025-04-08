@@ -7,7 +7,9 @@ export class PizzasApiController {
         try {
             const pizzas = await prisma.pizza.findMany({
                 orderBy: {title: "asc"},
-                include: {PizzaSizes: true}
+                include: {PizzaSizes: {
+                    orderBy: {size: "desc"}
+                }}
             })
 
             res.json({pizzas})

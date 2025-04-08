@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: true}))
 
 //rotas da api
 app.use("/api", usersApiRouter)
-app.use("/api", ordersApiRouter)
+app.use("/api/orders", ordersApiRouter)
 app.use("/api/pizzas", pizzasApiRouter)
 
 //middleware de tratamento de erro

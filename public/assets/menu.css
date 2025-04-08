@@ -29,6 +29,7 @@
     height: 26rem;
     width: 24rem;
     transition: 0.3s;
+    position: relative;
 }
 
 .card:hover {
@@ -45,7 +46,7 @@
     width: 100%;
 }
 
-.container h3,
-.container p {
+.card h3,
+.card p {
     padding: 0.5rem 1.25rem 0;
 }

@@ -62,11 +62,11 @@ model Pizza {
 }
 
 model PizzaSize {
-  id      Int        @id @default(autoincrement())
-  price   Decimal    @db.Decimal(10, 2)
-  size    PizzaSizesEnum
+  id      Int     @id @default(autoincrement())
+  price   Decimal @db.Decimal(10, 2)
+  size    String  @db.Char(1)
   pizzaId Int
-  pizza   Pizza      @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
+  pizza   Pizza   @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
 }
 
 model OrderPizzas {
@@ -77,10 +77,4 @@ model OrderPizzas {
   order    Order @relation(fields: [orderId], references: [id])
 
   @@id([pizzaId, orderId])
-}
-
-enum PizzaSizesEnum {
-  P
-  M
-  G
 }
