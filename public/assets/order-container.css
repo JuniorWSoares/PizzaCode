@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 31%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 170px;
@@ -22,11 +22,6 @@
     border-radius: 5px;
     transition: 0.9s;
     cursor: auto;
-}
-
-.card:hover .order-container{
-    height: 180px;
-    width: 210px;
 }
 
 .hidden {

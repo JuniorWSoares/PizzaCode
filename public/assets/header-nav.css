@@ -22,7 +22,24 @@ nav {
     align-items: center;
     width: 100%;
 }
+
+#logo {
+    position: absolute;
+    text-decoration: none;
+    top: 13px;
+    left: 100px;
+    font-size: 30px;
+    color: var(--white-color);
+    font-family:"Spicy Rice", serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: 0.3s;
+}
   
+#logo:hover {
+    color: var(--primary-color);
+} 
+
 .nav-links {
     list-style: none;
     display: flex;

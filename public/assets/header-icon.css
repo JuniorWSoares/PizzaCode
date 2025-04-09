@@ -1,8 +1,8 @@
 .header-icons {
     position: absolute;
-    right: 2rem;
+    right: 100px;
     display: flex; 
-    gap: 1rem;
+    gap: 1.5rem;
 }
 .header-icons img {
     width: 30px;

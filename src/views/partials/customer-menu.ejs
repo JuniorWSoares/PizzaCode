@@ -13,7 +13,7 @@
               
               <% for(let j = 0; j < pizzas[i].PizzaSizes.length; j++) { %>
                 <label for="<%= pizzas[i].title %>-size-<%= pizzas[i].PizzaSizes[j].size %>">
-                  <input type="radio" id="<%= pizzas[i].title %>-size-<%= pizzas[i].PizzaSizes[j].size %>" name="size" value="<%= pizzas[i].PizzaSizes[j].size %>">
+                  <input type="radio" id="<%= pizzas[i].title %>-size-<%= pizzas[i].PizzaSizes[j].size %>" name="size" value="<%= pizzas[i].PizzaSizes[j].size %>" required>
                   <%= pizzas[i].PizzaSizes[j].size %> - R$ <%= pizzas[i].PizzaSizes[j].price %>
                 </label>
               <% } %>
