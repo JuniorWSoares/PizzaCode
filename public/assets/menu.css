@@ -34,8 +34,7 @@
 
 .card:hover {
     box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.5);
-    height: 25rem;
-    width: 25rem;
+    transform: scale(1.03);
     cursor: pointer;
 }
 
