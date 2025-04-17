@@ -5,5 +5,6 @@ const router = express.Router()
 const pizzasWebController = new PizzasWebController()
 
 router.get("/", pizzasWebController.index)
+router.get("/admin", pizzasWebController.admin)
 
 export = router

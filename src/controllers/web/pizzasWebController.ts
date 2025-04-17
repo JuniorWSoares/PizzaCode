@@ -1,29 +1,27 @@
-import { Pizza, PizzaSize } from "@prisma/client";
 import { Handler } from "express";
-
-interface PizzasApiResponse {
-    pizzas: Pizza[];
-    priceSize: PizzaSize[];
-}
-
+import { prisma } from "../../database";
 export class PizzasWebController {
     index: Handler = async (req, res, next) => {
         try {
-            const apiUrl = "http://localhost:3000/api/pizzas";
-            const response = await fetch(apiUrl);
+            const pizzas = await prisma.pizza.findMany({include: {PizzaSizes: true}})
 
-            if (!response.ok) {
-                throw new Error(`Erro ao buscar dados da API: ${response.statusText}`);
-            }
+            const user = { role: "Customer" }
 
-            const { pizzas, priceSize }: PizzasApiResponse = await response.json();
-
-            const user = { role: "Customer" };
-
-            res.render("index", { pizzas, priceSize, user });
+            res.render("index", { pizzas, user })
         } catch (error) {
-            console.error("Erro no controlador de pizzas:", error);
-            next(error);
+            next(error)
         }
-    };
+    }
+
+    admin: Handler = async (req, res, next) => {
+        try {
+            const pizzas = await prisma.pizza.findMany({include: {PizzaSizes: true}})
+
+            const user = { role: "Admin" }
+
+            res.render("admin", { pizzas, user })
+        } catch (error) {
+            next(error)
+        }
+    }
 }

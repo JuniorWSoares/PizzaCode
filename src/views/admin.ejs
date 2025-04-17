@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PizzaCode | Home</title>
+    <title>PizzaCode | Admin</title>
     <script src="/assets/js/update-form-script.js" defer></script>
     <script src="/assets/js/registration-script.js" defer></script>
     <script src="/assets/js/order-form-script.js" defer></script>
@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="/assets/css/home.css">
     <link rel="stylesheet" href="/assets/css/menu.css">
     <link rel="stylesheet" href="/assets/css/header-nav.css">
-    <link rel="stylesheet" href="/assets/css/about.css">
     <link rel="stylesheet" href="/assets/css/user.css">
     <link rel="stylesheet" href="/assets/css/login-register.css">
     <link rel="stylesheet" href="/assets/css/header-icon.css">
@@ -34,11 +33,9 @@
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#menu">Cardápio</a></li>
-          <li><a href="#about">Sobre Nós</a></li>
+          <li><a href="#orders">Pedidos</a></li>
           <li><a href="#contact">Contato</a></li>
-          <% if(user.role === "Admin") {%>
-            <li><a href="/admin">Admin</a></li>
-          <% } %>
+          <li><a href="/">Voltar ao Site</a></li>
         </ul>
   
         <%- include('partials/header') %>
@@ -53,19 +50,14 @@
       </div>
     </section>
 
-    <%- include('partials/customer-menu') %>
+    <!-- Admin menu -->
+    <%- include('partials/admin-menu') %>
     
-    <section id="about">
-      <img src="/images/pexels-viniciusbenedit-1082343.jpg" alt="Imagem de uma pizza">
-      <div id="about-text-container">
-        <h2>Sobre Nós</h2>
-        <p>Nossa pizzaria é dedicada a criar as melhores pizzas do mundo, com ingredientes frescos e receitas exclusivas. Cada pizza é preparada artesanalmente em forno à lenha, garantindo sabor e crocância inigualáveis. Valorizamos a tradição italiana, mas também inovamos com combinações únicas para surpreender seu paladar. Do atendimento à entrega, cada detalhe é pensado para oferecer uma experiência gastronômica inesquecível.</p>
-        <p></p>
-      </div>
+    <section id="orders">
       
     </section>
 
+    <!-- Footer -->
     <%- include('partials/footer') %>
   </body>
-
 </html>
