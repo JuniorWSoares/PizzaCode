@@ -57,12 +57,14 @@
             <!-- Formulário de Cadastro -->
             <div id="register-form" class="hidden">
               <h3>Cadastro</h3>
-              <input type="text" id="name" placeholder="Nome Completo">
-              <input type="date" id="birthdate">
-              <input type="email" id="register-email" placeholder="Crie seu e-mail">
-              <input type="password" id="register-password" placeholder="Crie uma senha">
-              <input type="tel" id="phone" placeholder="Telefone">
-              <button onclick="submitRegister()">Cadastrar</button>
+              <form action="/auth/register" method="post">
+                <input type="text" id="name" name="name" placeholder="Nome Completo">
+                <input type="date" id="birthdate" name="dayOfBirth">
+                <input type="email" id="register-email" name="email" placeholder="Crie seu e-mail">
+                <input type="password" id="register-password" name="password" placeholder="Crie uma senha">
+                <input type="tel" id="phone" name="phone" placeholder="Telefone">
+                <button type="submit">Cadastrar</button>
+              </form>
               <p>Já tem uma conta? <a href="#" id="show-login">Fazer login</a></p>
             </div>
           </div>
