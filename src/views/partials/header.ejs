@@ -17,9 +17,9 @@
       </div>
   
       <!-- Formulário de Cadastro -->
-      <div id="register-form" class="hidden">
+      <div id="register-form-container" class="hidden">
         <h3>Cadastro</h3>
-        <form action="/auth/register" method="post">
+        <form id="register-form" action="/auth/register" method="post">
           <input type="text" id="name" name="name" placeholder="Nome Completo">
           <input type="date" id="birthdate" name="dayOfBirth">
           <input type="email" id="register-email" name="email" placeholder="Crie seu e-mail">
@@ -28,6 +28,7 @@
           <button type="submit">Cadastrar</button>
         </form>
         <p>Já tem uma conta? <a href="#" id="show-login">Fazer login</a></p>
+        <div id="register-message"></div>
       </div>
     </div>
   </div>

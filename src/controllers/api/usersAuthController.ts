@@ -3,6 +3,7 @@ import { CreateUserRequestSchema } from "./schemas/usersRequestSchema";
 import { prisma } from "../../database";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import { HttpError } from "../../errors/HttpError";
 
 export class UsersAuthController {
     
@@ -12,12 +13,11 @@ export class UsersAuthController {
             const hashedPassword = await bcrypt.hash(body.password, 10)
             body.password = hashedPassword
 
-            const userExists = await prisma.user.findUnique({
-                where: { email: body.email }
-            })
+            const emailExists = await prisma.user.findUnique({where: { email: body.email }})
+            const phoneExists = await prisma.user.findUnique({where: { phone: body.phone }})
 
-            if (userExists) {
-                throw new Error("Usuário já existe")
+            if (emailExists || phoneExists) {
+                throw new HttpError(409 ,"Email ou telefone já cadastrados!")
             }
 
             const newUser = await prisma.user.create({data: body})

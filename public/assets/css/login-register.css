@@ -5,20 +5,22 @@
     --light-color: #eaeaea;
     --white-color: #fff;
     --black-color: #000;
+    --red-color: #ff0000;
+    --green-color: #178817;
 }
 
-#login-form, #register-form {
+#login-form, #register-form-container {
     text-align: center;
     padding: 30px;
     width: 300px;
 }
 
-#login-form h3, #register-form h3 {
+#login-form h3, #register-form-container h3 {
     color: var(--dark-color);
     margin-bottom: 10px;
 }
 
-#login-form input, #register-form input {
+#login-form input, #register-form-container input {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -27,7 +29,7 @@
     font-size: 1em;
 }
 
-#login-form button, #register-form button {
+#login-form button, #register-form-container button {
     width: 100%;
     margin-top: 8px;
     padding: 11px 12px;
@@ -41,11 +43,11 @@
     transition: background 0.5s;
 }
 
-#login-form button:hover, #register-form button:hover {
+#login-form button:hover, #register-form-container button:hover {
     background-color: var(--orange-color);
 }
 
-#login-form p, #register-form p {
+#login-form p, #register-form-container p {
     margin-top: 1rem;
     font-size: 0.9rem;
     color: var(--dark-color);
@@ -65,4 +67,26 @@
 
 .hidden {
     display: none;
+}
+
+.error-message {
+    color: var(--red-color);
+    margin-top: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+}
+
+#register-form .error{
+    border: 2px solid var(--red-color);
+}
+
+.success-message {
+    color: var(--green-color);
+    margin-top: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    display: block;
 }
