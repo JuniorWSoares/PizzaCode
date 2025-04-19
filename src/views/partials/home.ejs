@@ -1,6 +1,10 @@
 <section id="home">
     <div class="hero">
-      <h1>Bem-vindo à PizzaCode</h1>
+      <% if (userData.role !== "") { %>
+        <h1>Bem-vindo, <%= userData.name %> !</h1>
+      <% } else { %>
+        <h1>Bem-vindo à PizzaCode</h1>
+      <% } %>
       <p>Saborosas pizzas feitas especialmente para você!</p>
       <a href="#menu" class="cta-button">Ver Cardápio</a>
     </div>

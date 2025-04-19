@@ -7,7 +7,7 @@ import { HttpError } from "../../errors/HttpError";
 
 export class UsersAuthController {
     
-    create: Handler = async (req, res, next) => {
+    register: Handler = async (req, res, next) => {
         try {
             const body = CreateUserRequestSchema.parse(req.body)
             const hashedPassword = await bcrypt.hash(body.password, 10)
@@ -42,7 +42,7 @@ export class UsersAuthController {
         }
     }
 
-    show: Handler = async (req, res, next) => {
+    login: Handler = async (req, res, next) => {
         try {
             
             

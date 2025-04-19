@@ -5,6 +5,6 @@ const router = express.Router()
 
 const usersAuthController = new UsersAuthController()
 
-router.post("/register", usersAuthController.create)
+router.post("/register", usersAuthController.register)
 
 export = router
