@@ -1,23 +1,28 @@
-// Importa o tipo ErrorRequestHandler do Express para lidar com erros em middlewares.
+// Importa o tipo ErrorRequestHandler do Express para definir middlewares de tratamento de erros.
 import { ErrorRequestHandler } from "express";
-// Importa a classe HttpError para lidar com erros personalizados.
+
+// Importa a classe HttpError para criar e tratar erros personalizados.
 import { HttpError } from "../errors/HttpError";
 
-// Define o middleware de tratamento de erros.
+// Middleware de tratamento de erros.
 export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
-    // Verifica se o erro é uma instância de HttpError (erro personalizado).
+    // Verifica se o erro é um HttpError (erro personalizado).
     if (err instanceof HttpError) {
-        // Retorna uma resposta com o status e a mensagem do erro personalizado.
-        res.status(err.status).json({ error: err.message });
+        // Redireciona para a página inicial se o status for 403.
+        if (err.status === 403) {
+            return res.redirect("/")
+        }
+        // Retorna o status e a mensagem do erro em formato JSON.
+        res.status(err.status).json({ error: err.message })
     } 
-    // Verifica se o erro é uma instância da classe Error (erro genérico do JavaScript).
+    // Verifica se o erro é uma instância genérica de Error.
     else if (err instanceof Error) {
-        // Retorna uma resposta com status 500 (erro interno do servidor) e detalhes do erro.
-        res.status(500).json({ error: "Erro interno do servidor", details: err.message });
+        // Retorna status 500 com mensagem genérica e detalhes do erro.
+        res.status(500).json({ error: "Erro interno do servidor", details: err.message })
     } 
-    // Caso o erro não seja uma instância conhecida, trata como erro desconhecido.
+    // Trata erros desconhecidos.
     else {
-        // Retorna uma resposta com status 500 e informações genéricas sobre o erro.
-        res.status(500).json({ error: "Erro desconhecido", details: err });
+        // Retorna status 500 com informações genéricas sobre o erro.
+        res.status(500).json({ error: "Erro desconhecido", details: err })
     }
-};
+}

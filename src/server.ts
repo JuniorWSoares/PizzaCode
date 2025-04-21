@@ -28,11 +28,11 @@ app.use("/auth", usersAuthRouter) // Rotas para autenticação de usuários
 app.use("/api/orders", ordersApiRouter) // Rotas para gerenciamento de pedidos
 app.use("/api/pizzas", pizzasApiRouter) // Rotas para gerenciamento de pizzas
 
-// Middleware de tratamento de erros
-app.use(errorHandler) // Captura e trata erros de forma centralizada
-
 // Rotas da web
 app.use(pizzasWebRouter) // Rotas web relacionadas às pizzas
+
+// Middleware de tratamento de erros
+app.use(errorHandler) // Captura e trata erros de forma centralizada
 
 // Define a porta do servidor
 const PORT = process.env.PORT || 3000 // Usa a porta definida no ambiente ou 3000 como padrão
