@@ -1,51 +1,57 @@
-#menu{
+#menu {
+    /* Fundo com gradientes sobrepostos e uma imagem */
     background: 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.750), rgba(0, 0, 0, 0)),
-        linear-gradient(to top, rgba(0, 0, 0, 0.750), rgba(0, 0, 0, 0)), 
-        url(/images/floor-1256804_1280.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    background-attachment: fixed;
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.750), rgba(0, 0, 0, 0)), /* Gradiente escuro na parte inferior */
+        linear-gradient(to top, rgba(0, 0, 0, 0.750), rgba(0, 0, 0, 0)),   /* Gradiente escuro na parte superior */
+        url(/images/floor-1256804_1280.jpg);                              /* Imagem de fundo */
+    background-position: center;       /* Centraliza a imagem de fundo */
+    background-size: cover;            /* Faz a imagem cobrir todo o elemento */
+    background-repeat: no-repeat;      /* Evita repetição da imagem */
+    height: 100%;                      /* Altura total do elemento */
+    background-attachment: fixed;      /* Fixa o fundo durante o scroll */
 }
 
+/* Estilização do container principal */
 .container {
-    display: flex;
-    justify-content: center;
-    margin: 4rem auto;
-    gap: 30px;
-    flex-wrap: wrap; 
-    list-style: none;
-    padding: 0;
+    display: flex;                     /* Define layout flexível */
+    justify-content: center;           /* Centraliza os itens horizontalmente */
+    margin: 4rem auto;                 /* Margem superior/inferior de 4rem e centralização horizontal */
+    gap: 30px;                         /* Espaçamento entre os itens */
+    flex-wrap: wrap;                   /* Permite que os itens quebrem linha */
+    list-style: none;                  /* Remove os marcadores de lista */
+    padding: 0;                        /* Remove o padding padrão */
 }
 
-.card{
-    background-color: var(--light-color);
-    border-radius: .5rem;
-    box-shadow: 0 0 12px 15px rgba(0, 0, 0, 0.5);
-    text-align: left;
-    margin: 1.5rem;
-    height: 24rem;
-    width: 24rem;
-    transition: 0.3s;
-    position: relative;
+/* Estilização dos cartões */
+.card {
+    background-color: var(--light-color); /* Cor de fundo baseada em uma variável CSS */
+    border-radius: .5rem;                 /* Bordas arredondadas */
+    box-shadow: 0 0 12px 15px rgba(0, 0, 0, 0.5); /* Sombra ao redor do cartão */
+    text-align: left;                     /* Alinhamento do texto à esquerda */
+    margin: 1.5rem;                       /* Margem ao redor do cartão */
+    height: 24rem;                        /* Altura fixa do cartão */
+    width: 24rem;                         /* Largura fixa do cartão */
+    transition: 0.3s;                     /* Transição suave para efeitos */
+    position: relative;                   /* Define posição relativa para elementos filhos */
 }
 
+/* Efeito ao passar o mouse sobre o cartão */
 .card:hover {
-    box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.5);
-    transform: scale(1.03);
-    cursor: pointer;
+    box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.5); /* Aumenta a sombra */
+    transform: scale(1.03);                      /* Aumenta ligeiramente o tamanho */
+    cursor: pointer;                             /* Altera o cursor para indicar interatividade */
 }
 
+/* Estilização da imagem dentro do cartão */
 .card img {
-    border-top-left-radius: .5rem;
-    border-top-right-radius: .5rem;
-    object-fit: cover;
-    width: 100%;
+    border-top-left-radius: .5rem;  /* Arredonda o canto superior esquerdo */
+    border-top-right-radius: .5rem; /* Arredonda o canto superior direito */
+    object-fit: cover;              /* Faz a imagem preencher o espaço sem distorção */
+    width: 100%;                    /* Largura total do cartão */
 }
 
+/* Estilização dos textos (títulos e parágrafos) dentro do cartão */
 .card h3,
 .card p {
-    padding: 0.5rem 1.25rem 0;
+    padding: 0.5rem 1.25rem 0; /* Espaçamento interno: superior e laterais */
 }

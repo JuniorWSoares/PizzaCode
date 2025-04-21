@@ -1,80 +1,90 @@
 :root {
-    --orange-color: #e65c00;
-    --primary-color: #ffa500;
-    --dark-color: #232323;
-    --light-color: #eaeaea;
-    --white-color: #fff;
-    --black-color: #000;
+    --orange-color: #e65c00;  /* Cor laranja */
+    --primary-color: #ffa500; /* Cor primária (amarelo-laranja) */
+    --dark-color: #232323;    /* Cor escura */
+    --light-color: #eaeaea;   /* Cor clara */
+    --white-color: #fff;      /* Branco */
+    --black-color: #000;      /* Preto */
 }
 
+/* Estilização do container do usuário */
 .user {
-    position: relative;
-    display: inline-block;
+    position: relative;       /* Define posição relativa para posicionamento de elementos filhos */
+    display: inline-block;    /* Exibe como bloco inline */
 }
 
+/* Estilização da imagem do usuário */
 .user img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
+    width: 35px;              /* Largura fixa da imagem */
+    height: 35px;             /* Altura fixa da imagem */
+    border-radius: 50%;       /* Torna a imagem circular */
+    transition: transform 0.2s ease-in-out; /* Transição suave para transformações */
+    cursor: pointer;          /* Altera o cursor para indicar interatividade */
 }
 
+/* Efeito ao passar o mouse sobre a imagem do usuário */
 .user img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1);    /* Aumenta ligeiramente o tamanho da imagem */
 }
 
+/* Estilização do menu do usuário */
 .user-menu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background-color: var(--white-color);
-    box-shadow: 0px 0 12px 5px rgb(0, 0, 0);
-    border-radius: 8px;
-    overflow: hidden;
-    min-width: 220px;
-    z-index: 1000;
-    padding: 10px;
+    display: none;            /* Esconde o menu por padrão */
+    position: absolute;       /* Define posição absoluta em relação ao container pai */
+    top: 40px;                /* Posiciona o menu abaixo da imagem do usuário */
+    right: 0;                 /* Alinha o menu à direita */
+    background-color: var(--white-color); /* Fundo branco */
+    box-shadow: 0px 0 12px 5px rgb(0, 0, 0); /* Sombra ao redor do menu */
+    border-radius: 8px;       /* Bordas arredondadas */
+    overflow: hidden;         /* Esconde conteúdo que ultrapassar os limites */
+    min-width: 220px;         /* Largura mínima do menu */
+    z-index: 1000;            /* Garante que o menu fique acima de outros elementos */
+    padding: 10px;            /* Espaçamento interno */
 }
 
-#menu-options a ,
+/* Estilização dos links e botões dentro do menu */
+#menu-options a,
 #menu-options button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--dark-color);
-    transition: background-color 0.3s ease-in-out;
+    display: flex;            /* Define layout flexível */
+    align-items: center;      /* Alinha os itens verticalmente ao centro */
+    gap: 10px;                /* Espaçamento entre os itens */
+    padding: 12px 15px;       /* Espaçamento interno */
+    text-decoration: none;    /* Remove sublinhado dos links */
+    font-weight: 500;         /* Peso da fonte */
+    font-size: 16px;          /* Tamanho da fonte */
+    color: var(--dark-color); /* Cor do texto */
+    transition: background-color 0.3s ease-in-out; /* Transição suave para o fundo */
 }
 
+/* Efeito ao passar o mouse sobre links e botões */
 #menu-options a:hover,
 #menu-options button:hover {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: var(--primary-color); /* Altera a cor de fundo para a cor primária */
+    color: var(--white-color);             /* Altera a cor do texto para branco */
 }
 
+/* Estilização específica para botões no menu */
 #menu-options button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+    background: none;         /* Remove o fundo padrão */
+    border: none;             /* Remove bordas */
+    cursor: pointer;          /* Altera o cursor para indicar interatividade */
+    width: 100%;              /* Faz o botão ocupar toda a largura */
 }
 
+/* Estilização dos ícones dentro do menu */
 .user-menu a i,
 .user-menu button i {
-    font-size: 18px;
-    color: var(--primary-color);
+    font-size: 18px;          /* Tamanho da fonte dos ícones */
+    color: var(--primary-color); /* Cor dos ícones */
 }
 
-.user-menu a:hover i, 
+/* Efeito ao passar o mouse sobre ícones */
+.user-menu a:hover i,
 .user-menu button:hover i {
-    color: var(--white-color);
+    color: var(--white-color); /* Altera a cor dos ícones para branco */
 }
 
+/* Classe para exibir o menu */
 .show {
-    display: block;
+    display: block;           /* Exibe o menu */
 }

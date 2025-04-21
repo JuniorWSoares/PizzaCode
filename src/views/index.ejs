@@ -2,14 +2,18 @@
 <html lang="pt-BR">
 
   <head>
+    <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PizzaCode | Home</title>
+
+    <!-- Scripts JavaScript necessários para funcionalidades específicas -->
     <script src="/assets/js/update-form-script.js" defer></script>
     <script src="/assets/js/registration-script.js" defer></script>
     <script src="/assets/js/order-form-script.js" defer></script>
     <script src="/assets/js/scroll-adjust.js" defer></script>
 
+    <!-- Links para estilos CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="stylesheet" href="/assets/css/admin-style.css">
@@ -23,43 +27,52 @@
     <link rel="stylesheet" href="/assets/css/cart.css">
     <link rel="stylesheet" href="/assets/css/order-container.css">
     
+    <!-- Ícone da página -->
     <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
   </head>
 
   <body>
-    <!-- Header -->
+    <!-- Cabeçalho da página -->
     <header>
       <nav>
+        <!-- Logo do site -->
         <a id="logo" href="#home">PizzaCode</a>
+        <!-- Links de navegação -->
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#menu">Cardápio</a></li>
           <li><a href="#about">Sobre Nós</a></li>
           <li><a href="#contact">Contato</a></li>
+          <!-- Exibe o link para a página de administração apenas se o usuário for um administrador -->
           <% if(userData.role === "Admin") {%>
             <li><a href="/admin">Admin</a></li>
           <% } %>
         </ul>
   
+        <!-- Inclusão do cabeçalho parcial -->
         <%- include('partials/header') %>
       </nav>
     </header>
 
+    <!-- Inclusão da seção inicial (home) -->
     <%- include('partials/home') %>
 
-    <!-- Menu do cliente-->
+    <!-- Menu específico para clientes -->
     <%- include('partials/customer-menu') %>
     
+    <!-- Seção "Sobre Nós" -->
     <section id="about">
+      <!-- Imagem ilustrativa da seção -->
       <img src="/images/pexels-viniciusbenedit-1082343.jpg" alt="Imagem de uma pizza">
       <div id="about-text-container">
+        <!-- Título da seção -->
         <h2>Sobre Nós</h2>
+        <!-- Descrição sobre a pizzaria -->
         <p>Nossa pizzaria é dedicada a criar as melhores pizzas do mundo, com ingredientes frescos e receitas exclusivas. Cada pizza é preparada artesanalmente em forno à lenha, garantindo sabor e crocância inigualáveis. Valorizamos a tradição italiana, mas também inovamos com combinações únicas para surpreender seu paladar. Do atendimento à entrega, cada detalhe é pensado para oferecer uma experiência gastronômica inesquecível.</p>
-        <p></p>
       </div>
-      
     </section>
 
+    <!-- Inclusão do rodapé -->
     <%- include('partials/footer') %>
   </body>
 

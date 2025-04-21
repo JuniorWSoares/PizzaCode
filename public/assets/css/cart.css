@@ -1,53 +1,60 @@
+/* Declaração de variáveis CSS globais */
 :root {
-    --orange-color: #e65c00;
-    --primary-color: #ffa500;
-    --dark-color: #232323;
-    --light-color: #eaeaea;
-    --white-color: #fff;
-    --black-color: #000;
+    --orange-color: #e65c00; /* Cor laranja */
+    --primary-color: #ffa500; /* Cor primária (amarelo/laranja) */
+    --dark-color: #232323; /* Cor escura (preto escuro) */
+    --light-color: #eaeaea; /* Cor clara (cinza claro) */
+    --white-color: #fff; /* Cor branca */
+    --black-color: #000; /* Cor preta */
 }
 
+/* Estilização do contêiner do carrinho */
 .cart-container {
-    position: fixed;
-    top: 60px;
-    right: 20px;
-    width: 300px;
-    background-color: var(--white-color);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 15px;
-    display: none;
-    z-index: 1000;
+    position: fixed; /* Fixa o contêiner na tela */
+    top: 60px; /* Define a posição a 60px do topo */
+    right: 20px; /* Define a posição a 20px da direita */
+    width: 300px; /* Define a largura do contêiner */
+    background-color: var(--white-color); /* Fundo branco */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Define a prioridade de exibição */
 }
 
+/* Estilização do contêiner do carrinho quando visível */
 .cart-container.visible {
-    display: block;
+    display: block; /* Torna o contêiner visível */
 }
 
+/* Estilização de cada item no carrinho */
 .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--light-color);
+    display: flex; /* Layout flexível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* Espaça os itens horizontalmente */
+    padding: 10px 0; /* Espaçamento interno vertical */
+    border-bottom: 1px solid var(--light-color); /* Linha inferior separadora */
 }
 
+/* Estilização das imagens dos itens no carrinho */
 .cart-item img {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
+    width: 40px; /* Define a largura da imagem */
+    height: 40px; /* Define a altura da imagem */
+    border-radius: 5px; /* Bordas arredondadas */
 }
 
+/* Estilização dos botões nos itens do carrinho */
 .cart-item button {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    background-color: var(--primary-color); /* Fundo com a cor primária */
+    color: var(--white-color); /* Texto branco */
+    border: none; /* Remove bordas */
+    padding: 5px 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Altera o cursor para ponteiro */
+    transition: background 0.3s; /* Transição suave no fundo */
 }
 
+/* Efeito hover nos botões dos itens do carrinho */
 .cart-item button:hover {
-    background-color: darkorange;
+    background-color: darkorange; /* Altera o fundo para laranja escuro ao passar o mouse */
 }

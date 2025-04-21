@@ -1,93 +1,105 @@
 :root {
-    --orange-color: #e65c00;
-    --primary-color: #ffa500;
-    --dark-color: #232323;
-    --light-color: #eaeaea;
-    --white-color: #fff;
-    --black-color: #000;
-    --red-color: #ff0000;
-    --green-color: #13a613;
+    --orange-color: #e65c00; /* Cor laranja para destaques */
+    --primary-color: #ffa500; /* Cor primária (laranja claro) */
+    --dark-color: #232323; /* Cor escura para textos */
+    --light-color: #eaeaea; /* Cor clara para bordas e fundos */
+    --white-color: #fff; /* Cor branca */
+    --black-color: #000; /* Cor preta */
+    --red-color: #ff0000; /* Cor vermelha para erros */
+    --green-color: #13a613; /* Cor verde para mensagens de sucesso */
 }
 
+/* Estilo geral para os contêineres de login e registro */
 #login-form-container, #register-form-container {
-    text-align: center;
-    padding: 30px;
-    width: 300px;
+    text-align: center; /* Centraliza o texto */
+    padding: 30px; /* Espaçamento interno */
+    width: 300px; /* Largura fixa */
 }
 
+/* Estilo para os títulos (h3) dentro dos contêineres */
 #login-form-container h3, #register-form-container h3 {
-    color: var(--dark-color);
-    margin-bottom: 10px;
+    color: var(--dark-color); /* Cor escura */
+    margin-bottom: 10px; /* Espaçamento inferior */
 }
 
+/* Estilo para os campos de entrada (input) */
 #login-form-container input, #register-form-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid var(--light-color);
-    border-radius: 8px;
-    font-size: 1em;
+    width: 100%; /* Largura total do contêiner */
+    padding: 12px; /* Espaçamento interno */
+    margin: 8px 0; /* Espaçamento vertical */
+    border: 1px solid var(--light-color); /* Borda clara */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1em; /* Tamanho da fonte */
 }
 
+/* Estilo para os botões */
 #login-form-container button, #register-form-container button {
-    width: 100%;
-    margin-top: 8px;
-    padding: 11px 12px;
-    background-color: var(--primary-color);
-    border: none;
-    color: var(--white-color);
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background 0.5s;
+    width: 100%; /* Largura total */
+    margin-top: 8px; /* Espaçamento superior */
+    padding: 11px 12px; /* Espaçamento interno */
+    background-color: var(--primary-color); /* Cor de fundo primária */
+    border: none; /* Remove bordas padrão */
+    color: var(--white-color); /* Cor do texto branca */
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-size: 1.1em; /* Tamanho da fonte */
+    transition: background 0.5s; /* Transição suave para a cor de fundo */
 }
 
+/* Estilo para os botões ao passar o mouse */
 #login-form-container button:hover, #register-form-container button:hover {
-    background-color: var(--orange-color);
+    background-color: var(--orange-color); /* Cor de fundo laranja */
 }
 
+/* Estilo para os parágrafos dentro dos contêineres */
 #login-form-container p, #register-form-container p {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--dark-color);
+    margin-top: 1rem; /* Espaçamento superior */
+    font-size: 0.9rem; /* Tamanho da fonte */
+    color: var(--dark-color); /* Cor escura */
 }
 
+/* Estilo para os links de alternância entre login e registro */
 #show-register, #show-login {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: color 0.5s;
+    color: var(--primary-color); /* Cor primária */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 0.9rem; /* Tamanho da fonte */
+    transition: color 0.5s; /* Transição suave para a cor */
 }
 
+/* Estilo para os links ao passar o mouse */
 #show-register:hover, #show-login:hover {
-    color: var(--orange-color)
+    color: var(--orange-color); /* Cor laranja */
 }
 
+/* Classe para esconder elementos */
 .hidden {
-    display: none;
+    display: none; /* Oculta o elemento */
 }
 
+/* Estilo para mensagens de erro */
 .error-message {
-    color: var(--red-color);
-    margin-top: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    display: block;
+    color: var(--red-color); /* Cor vermelha */
+    margin-top: 30px; /* Espaçamento superior */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-weight: 600; /* Texto em negrito */
+    text-align: center; /* Centraliza o texto */
+    display: block; /* Exibe como bloco */
 }
 
+/* Estilo para campos com erro */
 #register-form .error,
-#login-form .error{
-    border: 2px solid var(--red-color);
+#login-form .error {
+    border: 2px solid var(--red-color); /* Borda vermelha */
 }
 
+/* Estilo para mensagens de sucesso */
 .success-message {
-    color: var(--green-color);
-    margin-top: 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    display: block;
+    color: var(--green-color); /* Cor verde */
+    margin-top: 30px; /* Espaçamento superior */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-weight: 600; /* Texto em negrito */
+    text-align: center; /* Centraliza o texto */
+    display: block; /* Exibe como bloco */
 }

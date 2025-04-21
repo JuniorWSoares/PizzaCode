@@ -1,43 +1,43 @@
 #about {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    height: 80vh;
-    background-color: var(--black-color);
-    color: var(--white-color);
-    overflow: hidden;
+    display: flex; /* Define um layout flexível */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    gap: 1rem; /* Define um espaçamento entre os itens */
+    width: 100%; /* Define a largura como 100% do contêiner pai */
+    height: 80vh; /* Define a altura como 80% da altura da janela de visualização */
+    background-color: var(--black-color); /* Define a cor de fundo usando uma variável CSS */
+    color: var(--white-color); /* Define a cor do texto usando uma variável CSS */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites */
 }
 
 #about img {
-    box-shadow: 5px 5px 20px -1px rgba(225, 49, 0, 0.764);
-    border-top-left-radius: 4rem;
-    border-bottom-right-radius: 4rem;
-    object-position: center;
-    float: left;
-    height: 30rem;
-    width: 30rem;
+    box-shadow: 5px 5px 20px -1px rgba(225, 49, 0, 0.764); /* Adiciona uma sombra ao redor da imagem */
+    border-top-left-radius: 4rem; /* Define bordas arredondadas no canto superior esquerdo */
+    border-bottom-right-radius: 4rem; /* Define bordas arredondadas no canto inferior direito */
+    object-position: center; /* Centraliza o conteúdo da imagem */
+    float: left; /* Faz a imagem flutuar à esquerda */
+    height: 30rem; /* Define a altura da imagem */
+    width: 30rem; /* Define a largura da imagem */
 }
 
-#about-text-container{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 1000px;
+#about-text-container {
+    display: flex; /* Define um layout flexível */
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 2rem; /* Define um espaçamento entre os itens */
+    max-width: 1000px; /* Define a largura máxima do contêiner */
 
-    h2{
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        font-family: "Rubik Dirt", system-ui;
-        font-weight: 400;
-        font-style: normal;
+    h2 {
+        font-size: 3rem; /* Define o tamanho da fonte */
+        margin-bottom: 1rem; /* Adiciona um espaçamento inferior */
+        font-family: "Rubik Dirt", system-ui; /* Define a fonte principal e uma alternativa */
+        font-weight: 400; /* Define o peso da fonte */
+        font-style: normal; /* Define o estilo da fonte como normal */
     }
 
-    p{
-        font-size: 2.5rem;
-        font-family: "Rochester", cursive;
-        font-weight: 400;
-        font-style: normal;
+    p {
+        font-size: 2.5rem; /* Define o tamanho da fonte */
+        font-family: "Rochester", cursive; /* Define a fonte principal e uma alternativa cursiva */
+        font-weight: 400; /* Define o peso da fonte */
+        font-style: normal; /* Define o estilo da fonte como normal */
     }
 }

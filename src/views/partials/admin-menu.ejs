@@ -1,55 +1,64 @@
+<!-- Seção principal do menu administrativo -->
 <section id="menu">
   <h2>Cardápio</h2>
   <div id="main-container">
     <div id="pizza-type-container">
 
+      <!-- Título da seção de cadastro de pizzas -->
       <h3>Cadastrar Pizza</h3>
 
       <!-- Formulário para cadastrar uma nova pizza -->
-
       <div id="pizza-type-form-container">
         <form id="pizza-type-form" action="/api/pizzas/create" method="post" enctype="multipart/form-data">
+          <!-- Campo para o título da pizza -->
           <input type="text" name="title" id="title" placeholder="Título" required>
+          <!-- Campo para a descrição da pizza -->
           <input type="text" name="description" id="description" placeholder="Descrição" required>
+          <!-- Campo para o upload da imagem da pizza -->
           <input type="file" name="image" id="image" required>
+          <!-- Botão para enviar o formulário -->
           <button class="pizza-send-button" type="submit">Cadastrar</button>
         </form>
       </div>
 
       <!-- Formulário oculto para atualizar uma pizza existente -->
-
       <div id="update-pizza-type-container" hidden>
         <form id="update-pizza-type-form" action="" method="post" enctype="multipart/form-data">
+          <!-- Campo oculto para o ID da pizza -->
           <input type="text" name="id" id="id" placeholder="ID" required hidden>
+          <!-- Campo para o título atualizado da pizza -->
           <input type="text" name="title" id="updated-title" placeholder="Título" required>
+          <!-- Campo para a descrição atualizada da pizza -->
           <input type="text" name="description" id="updated-description" placeholder="Descrição" required>
+          <!-- Campo para o upload da nova imagem da pizza -->
           <input type="file" name="image" id="updated-image" required>
+          <!-- Botão para enviar o formulário de atualização -->
           <button class="pizza-send-button" type="submit">Atualizar</button>
         </form>
       </div>
 
       <!-- Lista de pizzas cadastradas -->
-
       <ul id="pizza-menu-container">
         <% for(let i = 0; i < pizzas.length; i++) { %>
           <li class="pizza-card">
             <div class="left-content">
+              <!-- Exibe a imagem da pizza -->
               <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
               <div>
+                <!-- Exibe o título e ID da pizza -->
                 <h3><%= pizzas[i].title %> - ID: <%= pizzas[i].id %></h3>
+                <!-- Exibe a descrição da pizza -->
                 <p><%= pizzas[i].description %></p>
               </div>
             </div>
             <div class="buttons">
 
-              <!-- Botão para excluir pizza -->
-
+              <!-- Botão para excluir uma pizza -->
               <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esta pizza?')">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
 
-              <!-- Botão para atualizar pizza -->
-
+              <!-- Botão para abrir o formulário de atualização da pizza -->
               <button 
                 class="pizza-update-button" 
                 data-id="<%= pizzas[i].id %>" 
@@ -64,52 +73,59 @@
     </div>
 
     <div id="pizza-sized-container">
+      <!-- Título da seção de cadastro de tamanhos e preços -->
       <h3>Cadastrar Tamanho e Preço</h3>
 
       <!-- Formulário para cadastrar tamanhos e preços das pizzas -->
-
       <div id="pizza-sized-form-container">
         <form id="pizza-sized-form" action="/api/pizzas/addSize" method="post">
           <div class="left-side">
+            <!-- Seleção do tamanho da pizza -->
             <select name="size" id="size">
               <option value="P">P</option>
               <option value="M">M</option>
               <option value="G">G</option>
             </select>
+            <!-- Campo para o ID da pizza -->
             <input type="text" name="pizzaId" id="pizzaId" placeholder="ID" required>
+            <!-- Campo para o preço da pizza -->
             <input type="text" name="price" id="price" placeholder="Preço" required>
           </div>
-        
+          <!-- Botão para enviar o formulário -->
           <button class="pizza-send-button" type="submit">Cadastrar</button>
         </form>
       </div>
 
       <!-- Formulário oculto para atualizar tamanho e preço -->
-
       <div id="update-pizza-size-container" hidden>
         <form id="update-pizza-size-form" action="" method="post">
           <div class="left-side">
+            <!-- Seleção do tamanho atualizado -->
             <select name="size" id="updated-size">
               <option value="P">P</option>
               <option value="M">M</option>
               <option value="G">G</option>
             </select>
+            <!-- Campo para o preço atualizado -->
             <input type="text" name="price" id="updated-price" placeholder="Preço" required>
+            <!-- Campo oculto para o ID do tamanho -->
             <input type="text" name="id" id="size-id" hidden>
           </div>
+          <!-- Botão para enviar o formulário de atualização -->
           <button class="pizza-send-button" type="submit">Atualizar</button>
         </form>
       </div>
 
       <!-- Lista de tamanhos e preços cadastrados -->
-
       <ul id="size-pizza-menu-container">
         <% for(let i = 0; i < pizzas.length; i++) { %>
           <% for(let j = 0; j < pizzas[i].PizzaSizes.length; j++) { %>
           <li class="pizza-size-card">
             <div class="left-content">
+              <!-- Exibe a imagem da pizza -->
               <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
               <div>
+                <!-- Exibe o tamanho, título e preço da pizza -->
                 <h3> 
                   <span id="size-color"><%= pizzas[i].PizzaSizes[j].size %> </span> -
                   <%= pizzas[i].title %> - 
@@ -121,13 +137,11 @@
             <div class="buttons">
 
               <!-- Botão para excluir tamanho e preço -->
-
               <form action="api/pizzas/delete-size/<%= pizzas[i].PizzaSizes[j].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este tamanho?')">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
 
-              <!-- Botão para atualizar tamanho e preço -->
-               
+              <!-- Botão para abrir o formulário de atualização de tamanho e preço -->
               <button 
                 class="pizza-size-update-button" 
                 data-id="<%= pizzas[i].PizzaSizes[j].id %>"

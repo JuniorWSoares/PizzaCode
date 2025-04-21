@@ -1,64 +1,72 @@
+/* Declaração de variáveis CSS globais */
 :root {
-    --orange-color: #e65c00;
-    --primary-color: #ffa500;
-    --dark-color: #232323;
-    --light-color: #eaeaea;
-    --white-color: #fff;
-    --black-color: #000;
+    --orange-color: #e65c00; /* Cor laranja */
+    --primary-color: #ffa500; /* Cor primária (amarelo/laranja) */
+    --dark-color: #232323; /* Cor escura (preto escuro) */
+    --light-color: #eaeaea; /* Cor clara (cinza claro) */
+    --white-color: #fff; /* Cor branca */
+    --black-color: #000; /* Cor preta */
 }
 
+/* Estilização do cabeçalho */
 header {
-    background-color: var(--black-color);
-    color: var(--white-color);
-    position: fixed;
-    width: 100%;
-    padding: 1.5rem 0;
-    z-index: 1000;
+    background-color: var(--black-color); /* Fundo preto */
+    color: var(--white-color); /* Texto branco */
+    position: fixed; /* Fixa o cabeçalho no topo da página */
+    width: 100%; /* Largura total */
+    padding: 1.5rem 0; /* Espaçamento interno vertical */
+    z-index: 1000; /* Prioridade de exibição */
 }
 
+/* Estilização da barra de navegação */
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    width: 100%; /* Largura total */
 }
 
+/* Estilização do logotipo */
 #logo {
-    position: absolute;
-    text-decoration: none;
-    top: 13px;
-    left: 100px;
-    font-size: 30px;
-    color: var(--white-color);
-    font-family:"Spicy Rice", serif;
-    font-weight: 400;
-    font-style: normal;
-    transition: 0.3s;
+    position: absolute; /* Posiciona o logotipo de forma absoluta */
+    text-decoration: none; /* Remove o sublinhado do texto */
+    top: 13px; /* Define a posição a 13px do topo */
+    left: 100px; /* Define a posição a 100px da esquerda */
+    font-size: 30px; /* Tamanho da fonte */
+    color: var(--white-color); /* Cor do texto branco */
+    font-family: "Spicy Rice", serif; /* Fonte personalizada */
+    font-weight: 400; /* Peso da fonte */
+    font-style: normal; /* Estilo da fonte normal */
+    transition: 0.3s; /* Transição suave para efeitos */
 }
-  
+
+/* Efeito hover no logotipo */
 #logo:hover {
-    color: var(--primary-color);
-    transform: scale(1.02);
-} 
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    gap: 2rem;
-} 
-  
-.nav-links li a {
-    text-decoration: none;
-    display: inline-block;
-    font-weight: 700;
-    color: var(--primary-color);
-    transition: 0.3s;
+    color: var(--primary-color); /* Altera a cor para a cor primária */
+    transform: scale(1.02); /* Aumenta levemente o tamanho */
 }
 
+/* Estilização dos links de navegação */
+.nav-links {
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    flex-grow: 1; /* Faz os links ocuparem o espaço disponível */
+    gap: 2rem; /* Espaçamento entre os links */
+}
+
+/* Estilização dos links individuais */
+.nav-links li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    display: inline-block; /* Exibe os links como blocos inline */
+    font-weight: 700; /* Peso da fonte em negrito */
+    color: var(--primary-color); /* Cor do texto com a cor primária */
+    transition: 0.3s; /* Transição suave para efeitos */
+}
+
+/* Efeito hover nos links de navegação */
 .nav-links li a:hover {
-    text-decoration: none;
-    color: var(--orange-color);
-    transform: scale(1.09);
+    text-decoration: none; /* Remove o sublinhado */
+    color: var(--orange-color); /* Altera a cor para laranja */
+    transform: scale(1.09); /* Aumenta levemente o tamanho */
 }

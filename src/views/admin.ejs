@@ -2,14 +2,18 @@
 <html lang="pt-BR">
 
   <head>
+    <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PizzaCode | Admin</title>
+
+    <!-- Scripts JavaScript necessários para funcionalidades específicas -->
     <script src="/assets/js/update-form-script.js" defer></script>
     <script src="/assets/js/registration-script.js" defer></script>
     <script src="/assets/js/order-form-script.js" defer></script>
     <script src="/assets/js/scroll-adjust.js" defer></script>
 
+    <!-- Links para estilos CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="stylesheet" href="/assets/css/admin-style.css">
@@ -22,14 +26,17 @@
     <link rel="stylesheet" href="/assets/css/cart.css">
     <link rel="stylesheet" href="/assets/css/order-container.css">
     
+    <!-- Ícone da página -->
     <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
   </head>
 
   <body>
-    <!-- Header -->
+    <!-- Cabeçalho da página -->
     <header>
       <nav>
+        <!-- Logo do site -->
         <a id="logo" href="#home">PizzaCode</a>
+        <!-- Links de navegação -->
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#menu">Cardápio</a></li>
@@ -38,20 +45,23 @@
           <li><a href="/">Voltar ao Site</a></li>
         </ul>
   
+        <!-- Inclusão do cabeçalho parcial -->
         <%- include('partials/header') %>
       </nav>
     </header>
 
+    <!-- Inclusão da seção inicial (home) -->
     <%- include('partials/home') %>
 
-    <!-- Menu do admin -->
+    <!-- Menu específico para administradores -->
     <%- include('partials/admin-menu') %>
     
+    <!-- Seção de pedidos -->
     <section id="orders">
-      
+      <!-- Conteúdo relacionado aos pedidos será adicionado aqui -->
     </section>
 
-    <!-- Footer -->
+    <!-- Rodapé da página -->
     <%- include('partials/footer') %>
   </body>
 </html>

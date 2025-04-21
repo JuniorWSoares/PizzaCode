@@ -1,10 +1,13 @@
+/* Estilização do contêiner de ícones no cabeçalho */
 .header-icons {
-    position: absolute;
-    right: 100px;
-    display: flex; 
-    gap: 1.5rem;
+    position: absolute; /* Posiciona o contêiner de forma absoluta em relação ao elemento pai */
+    right: 100px; /* Define a posição a 100px da borda direita */
+    display: flex; /* Define um layout flexível para os ícones */
+    gap: 1.5rem; /* Adiciona um espaçamento de 1.5rem entre os ícones */
 }
+
+/* Estilização das imagens dos ícones no cabeçalho */
 .header-icons img {
-    width: 30px;
-    height: 30px;
+    width: 30px; /* Define a largura da imagem como 30px */
+    height: 30px; /* Define a altura da imagem como 30px */
 }

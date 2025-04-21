@@ -1,44 +1,49 @@
+/* Estilização da seção hero (destaque principal da página) */
 .hero {
     background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0)),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0)),
-        url(/images/pexels-narda-yescas-1566837.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    color: var(--white-color);
-    min-height: 82vh;
-    padding: 10rem 0;
-    text-align: center;
+        linear-gradient(to top, rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0)), /* Gradiente escuro na parte superior */
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0)), /* Gradiente escuro na parte inferior */
+        url(/images/pexels-narda-yescas-1566837.jpg); /* Imagem de fundo */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o contêiner */
+    background-position: top; /* Posiciona a imagem no topo */
+    color: var(--white-color); /* Define a cor do texto como branco */
+    min-height: 82vh; /* Define a altura mínima como 82% da altura da janela de visualização */
+    padding: 10rem 0; /* Adiciona espaçamento interno vertical */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* Estilização do título principal dentro da seção hero */
 .hero h1 {
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 4rem;
+    font-family: "Cabin Sketch", sans-serif; /* Define a fonte personalizada */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    font-style: normal; /* Define o estilo da fonte como normal */
+    font-size: 4rem; /* Define o tamanho da fonte */
 }
 
+/* Estilização do parágrafo dentro da seção hero */
 .hero p {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
+    font-size: 1.5rem; /* Define o tamanho da fonte */
+    margin-top: 1.5rem; /* Adiciona espaçamento superior */
 }
 
+/* Estilização do botão de chamada para ação (CTA) */
 .cta-button {
-    background-color: var(--primary-color);
-    box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.828);
-    border-radius: 10px;
-    color: var(--dark-color);
-    display: inline-block;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: 0.5s;
+    background-color: var(--primary-color); /* Define a cor de fundo como a cor primária */
+    box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.828); /* Adiciona uma sombra ao botão */
+    border-radius: 10px; /* Define bordas arredondadas */
+    color: var(--dark-color); /* Define a cor do texto como preto escuro */
+    display: inline-block; /* Exibe o botão como um bloco inline */
+    font-size: 1.25rem; /* Define o tamanho da fonte */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    margin-top: 1.5rem; /* Adiciona espaçamento superior */
+    padding: 8px 16px; /* Adiciona espaçamento interno */
+    text-decoration: none; /* Remove o sublinhado do texto */
+    transition: 0.5s; /* Adiciona uma transição suave para efeitos */
 }
 
-.cta-button:hover{
-    background-color: var(--orange-color);
-    transform: scale(1.05);
+/* Efeito hover no botão de chamada para ação */
+.cta-button:hover {
+    background-color: var(--orange-color); /* Altera a cor de fundo para laranja */
+    transform: scale(1.05); /* Aumenta levemente o tamanho do botão */
 }

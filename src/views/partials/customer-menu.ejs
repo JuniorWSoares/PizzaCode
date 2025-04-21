@@ -1,22 +1,35 @@
+<!-- Seção principal do menu de cliente -->
 <section id="menu">
+    <!-- Título do cardápio -->
     <h2>Cardápio</h2>
     
+    <!-- Lista de pizzas disponíveis -->
     <ul class="container">
       <% for(let i = 0; i < pizzas.length; i++) { %>
         <li class="card">
+          <!-- Exibe a imagem da pizza -->
           <img src="<%= pizzas[i].url %>" width="448" height="260" alt="<%= pizzas[i].title %>">
+          <!-- Exibe o título da pizza -->
           <h3><%= pizzas[i].title %></h3>
+          <!-- Exibe a descrição da pizza -->
           <p><%= pizzas[i].description %></p>
-          <div class="order-container hidden" >
+          <!-- Contêiner para o formulário de pedido -->
+          <div class="order-container hidden">
+            <!-- Formulário para realizar o pedido -->
             <form action="/api/orders" method="post">
+              <!-- Título da seção de escolha de tamanho -->
               <h4>Escolha o tamanho:</h4>
               
+              <!-- Loop para exibir os tamanhos disponíveis da pizza -->
               <% for(let j = 0; j < pizzas[i].PizzaSizes.length; j++) { %>
                 <label for="<%= pizzas[i].title %>-size-<%= pizzas[i].PizzaSizes[j].size %>">
+                  <!-- Opção de tamanho com botão de rádio -->
                   <input type="radio" id="<%= pizzas[i].title %>-size-<%= pizzas[i].PizzaSizes[j].size %>" name="size" value="<%= pizzas[i].PizzaSizes[j].size %>" required>
+                  <!-- Exibe o tamanho e o preço da pizza -->
                   <%= pizzas[i].PizzaSizes[j].size %> - R$ <%= pizzas[i].PizzaSizes[j].price %>
                 </label>
               <% } %>
+              <!-- Botão para enviar o pedido -->
               <button type="submit">Pedir</button>
             </form>
           </div>

@@ -1,86 +1,95 @@
+/* Importação de fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
 
+/* Reset básico para garantir consistência entre navegadores */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
+    box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho total do elemento */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+    font-family: "Roboto", sans-serif; /* Define a fonte padrão como Roboto */
 }
 
+/* Variáveis CSS para facilitar a reutilização de cores */
 :root {
-    --orange-color: #e65c00;
-    --primary-color: #ffa500;
-    --dark-color: #232323;
-    --light-color: #eaeaea;
-    --white-color: #fff;
-    --black-color: #000;
+    --orange-color: #e65c00; /* Cor laranja */
+    --primary-color: #ffa500; /* Cor primária */
+    --dark-color: #232323; /* Cor escura */
+    --light-color: #eaeaea; /* Cor clara */
+    --white-color: #fff; /* Branco */
+    --black-color: #000; /* Preto */
 }
 
+/* Define comportamento de rolagem suave para o documento */
 html {
     scroll-behavior: smooth;
 }
 
+/* Estilização básica do corpo da página */
 body {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    font-family: "Roboto", sans-serif; /* Fonte padrão */
+    font-optical-sizing: auto; /* Ajuste óptico automático da fonte */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Estilo normal */
 }
 
-a{
-    color: var(--primary-color);
-    transition: color 0.5s;
+/* Estilo para links */
+a {
+    color: var(--primary-color); /* Cor primária */
+    transition: color 0.5s; /* Transição suave ao mudar a cor */
 }
 
-h2{
-    font-family: "Rubik Dirt", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--white-color);
-}
-
-section:not(#home, #contact) {
-    padding: 4rem;
-    text-align: center;
-}
-
+/* Estilo para títulos de nível 2 */
 h2 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-family: "Rubik Dirt", system-ui; /* Fonte personalizada */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+    color: var(--white-color); /* Cor branca */
+    font-size: 3rem; /* Tamanho da fonte */
+    margin-bottom: 1.5rem; /* Espaçamento inferior */
 }
 
+/* Estilo para seções específicas, exceto as com IDs "home" e "contact" */
+section:not(#home, #contact) {
+    padding: 4rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para parágrafos */
 p {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Tamanho da fonte */
 }
 
+/* Estilo para o elemento <address> */
 address {
-    width: 100%;
-    height: 30vh;
-    font-style: italic;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
+    width: 100%; /* Largura total */
+    height: 30vh; /* Altura de 30% da altura da viewport */
+    font-style: italic; /* Texto em itálico */
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 10rem; /* Espaçamento entre os elementos filhos */
 }
 
-address div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+/* Estilo para os elementos <div> dentro de <address> */
+address div {
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
 }
 
-address a:hover{
-    color: var(--orange-color);
+/* Estilo para links dentro de <address> ao passar o mouse */
+address a:hover {
+    color: var(--orange-color); /* Muda a cor para laranja */
 }
 
+/* Estilo para o rodapé */
 footer {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    padding: 4rem 2rem 2rem;
-    text-align: center;
+    background-color: var(--dark-color); /* Fundo escuro */
+    color: var(--white-color); /* Texto branco */
+    padding: 4rem 2rem 2rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
 }

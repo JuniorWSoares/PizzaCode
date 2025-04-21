@@ -1,86 +1,116 @@
+// Importa o tipo "Handler" do Express, o cliente Prisma para interagir com o banco de dados,
+// e os esquemas de validação para as requisições relacionadas a pizzas.
 import { Handler } from "express";
 import { prisma } from "../../database";
-import { AddPizzaSizeRequestSchema, CreatePizzaRequestSchema, UpdatePizzaSizeRequestSchema} from "./schemas/pizzasRequestSchema";
+import { AddPizzaSizeRequestSchema, CreatePizzaRequestSchema, UpdatePizzaSizeRequestSchema } from "./schemas/pizzasRequestSchema";
 
+// Define a classe PizzasApiController, que contém os métodos para manipular as requisições relacionadas a pizzas.
 export class PizzasApiController {
+    // Método "index": Responsável por listar todas as pizzas.
+    // Ordena as pizzas por título em ordem ascendente e inclui os tamanhos das pizzas ordenados por tamanho em ordem descendente.
     index: Handler = async (req, res, next) => {
         try {
             const pizzas = await prisma.pizza.findMany({
-                orderBy: {title: "asc"},
-                include: {PizzaSizes: {
-                    orderBy: {size: "desc"}
-                }}
+                orderBy: { title: "asc" },
+                include: {
+                    PizzaSizes: {
+                        orderBy: { size: "desc" }
+                    }
+                }
             })
 
-            res.json({pizzas})
+            // Retorna a lista de pizzas no formato JSON.
+            res.json({ pizzas })
         } catch (error) {
+            // Passa o erro para o middleware de tratamento de erros.
             next(error)
         }
     }
-    
+
+    // Método "create": Responsável por criar uma nova pizza.
+    // Valida os dados da requisição usando o esquema "CreatePizzaRequestSchema".
     create: Handler = async (req, res, next) => {
         try {
-            const {description, title} = CreatePizzaRequestSchema.parse(req.body)
-            const imageUrl = `/uploads/${req.file?.filename}`
-            const data = {description, title, url: imageUrl}
+            const { description, title } = CreatePizzaRequestSchema.parse(req.body)
+            const imageUrl = `/uploads/${req.file?.filename}` // Define a URL da imagem com base no arquivo enviado.
+            const data = { description, title, url: imageUrl }
 
-            await prisma.pizza.create({data})
+            // Cria a nova pizza no banco de dados.
+            await prisma.pizza.create({ data })
 
-            res.redirect("/#menu")
+            // Redireciona para a página do menu.
+            res.redirect("/admin#menu")
         } catch (error) {
             next(error)
         }
     }
 
+    // Método "update": Responsável por atualizar uma pizza existente.
+    // Valida os dados da requisição e atualiza a pizza no banco de dados.
     update: Handler = async (req, res, next) => {
         try {
-            const {description, title} = CreatePizzaRequestSchema.parse(req.body)
+            const { description, title } = CreatePizzaRequestSchema.parse(req.body)
             const imageUrl = `/uploads/${req.file?.filename}`
-            const data = {description, title, url: imageUrl}
+            const data = { description, title, url: imageUrl }
 
-            await prisma.pizza.update({ where: {id: Number(req.params.id)}, data })
+            // Atualiza a pizza com base no ID fornecido nos parâmetros da URL.
+            await prisma.pizza.update({ where: { id: Number(req.params.id) }, data })
 
-            res.redirect("/#menu")
+            res.redirect("/admin#menu")
         } catch (error) {
             next(error)
         }
     }
 
+    // Método "delete": Responsável por excluir uma pizza.
     delete: Handler = async (req, res, next) => {
         try {
-            await prisma.pizza.delete({where: {id: Number(req.params.id)}})
-            res.redirect("/#menu")
+            // Exclui a pizza com base no ID fornecido nos parâmetros da URL.
+            await prisma.pizza.delete({ where: { id: Number(req.params.id) } })
+
+            res.redirect("/admin#menu")
         } catch (error) {
             next(error)
         }
     }
 
+    // Método "addSize": Responsável por adicionar um novo tamanho a uma pizza.
+    // Valida os dados da requisição usando o esquema "AddPizzaSizeRequestSchema".
     addSize: Handler = async (req, res, next) => {
         try {
             const body = AddPizzaSizeRequestSchema.parse(req.body)
-            await prisma.pizzaSize.create({data: body})
 
-            res.redirect("/#menu")
+            // Cria um novo tamanho de pizza no banco de dados.
+            await prisma.pizzaSize.create({ data: body })
+
+            res.redirect("/admin#menu")
         } catch (error) {
             next(error)
         }
     }
 
+    // Método "updateSize": Responsável por atualizar um tamanho de pizza existente.
+    // Valida os dados da requisição usando o esquema "UpdatePizzaSizeRequestSchema".
     updateSize: Handler = async (req, res, next) => {
         try {
             const body = UpdatePizzaSizeRequestSchema.parse(req.body)
-            await prisma.pizzaSize.update({data: body, where: {id: Number(req.params.id)}})
 
-            res.redirect("/#menu")
+            // Atualiza o tamanho da pizza com base no ID fornecido nos parâmetros da URL.
+            await prisma.pizzaSize.update({ data: body, where: { id: Number(req.params.id) } })
+
+            res.redirect("/admin#menu")
         } catch (error) {
             next(error)
         }
     }
 
+    // Método "deleteSize": Responsável por excluir um tamanho de pizza.
     deleteSize: Handler = async (req, res, next) => {
         try {
-            await prisma.pizzaSize.delete({where: {id: Number(req.params.id)}})
-            res.redirect("/#menu")
+            // Exclui o tamanho da pizza com base no ID fornecido nos parâmetros da URL.
+            await prisma.pizzaSize.delete({ where: { id: Number(req.params.id) } })
+
+            res.redirect("/admin#menu")
         } catch (error) {
             next(error)
         }
