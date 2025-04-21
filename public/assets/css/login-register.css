@@ -9,18 +9,18 @@
     --green-color: #13a613;
 }
 
-#login-form, #register-form-container {
+#login-form-container, #register-form-container {
     text-align: center;
     padding: 30px;
     width: 300px;
 }
 
-#login-form h3, #register-form-container h3 {
+#login-form-container h3, #register-form-container h3 {
     color: var(--dark-color);
     margin-bottom: 10px;
 }
 
-#login-form input, #register-form-container input {
+#login-form-container input, #register-form-container input {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -29,7 +29,7 @@
     font-size: 1em;
 }
 
-#login-form button, #register-form-container button {
+#login-form-container button, #register-form-container button {
     width: 100%;
     margin-top: 8px;
     padding: 11px 12px;
@@ -43,11 +43,11 @@
     transition: background 0.5s;
 }
 
-#login-form button:hover, #register-form-container button:hover {
+#login-form-container button:hover, #register-form-container button:hover {
     background-color: var(--orange-color);
 }
 
-#login-form p, #register-form-container p {
+#login-form-container p, #register-form-container p {
     margin-top: 1rem;
     font-size: 0.9rem;
     color: var(--dark-color);
@@ -78,7 +78,8 @@
     display: block;
 }
 
-#register-form .error{
+#register-form .error,
+#login-form .error{
     border: 2px solid var(--red-color);
 }
 
