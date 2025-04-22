@@ -6,27 +6,6 @@ import { AddPizzaSizeRequestSchema, CreatePizzaRequestSchema, UpdatePizzaSizeReq
 
 // Define a classe PizzasApiController, que contém os métodos para manipular as requisições relacionadas a pizzas.
 export class PizzasApiController {
-    // Método "index": Responsável por listar todas as pizzas.
-    // Ordena as pizzas por título em ordem ascendente e inclui os tamanhos das pizzas ordenados por tamanho em ordem descendente.
-    index: Handler = async (req, res, next) => {
-        try {
-            const pizzas = await prisma.pizza.findMany({
-                orderBy: { title: "asc" },
-                include: {
-                    PizzaSizes: {
-                        orderBy: { size: "desc" }
-                    }
-                }
-            })
-
-            // Retorna a lista de pizzas no formato JSON.
-            res.json({ pizzas })
-        } catch (error) {
-            // Passa o erro para o middleware de tratamento de erros.
-            next(error)
-        }
-    }
-
     // Método "create": Responsável por criar uma nova pizza.
     // Valida os dados da requisição usando o esquema "CreatePizzaRequestSchema".
     create: Handler = async (req, res, next) => {

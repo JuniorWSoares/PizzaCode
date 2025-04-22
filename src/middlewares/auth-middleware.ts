@@ -1,10 +1,6 @@
-// Importa o módulo jwt para manipulação de tokens JWT.
 import jwt from "jsonwebtoken";
-// Importa o tipo Handler do Express, que representa um middleware.
 import { Handler } from "express";
-// Importa o cliente Prisma para interagir com o banco de dados.
 import { prisma } from "../database";
-// Importa a classe HttpError para lançar erros HTTP personalizados.
 import { HttpError } from "../errors/HttpError";
 
 // Define o middleware de autenticação que verifica a presença e validade de um token JWT.

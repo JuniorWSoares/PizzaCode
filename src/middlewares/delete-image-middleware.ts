@@ -1,12 +1,7 @@
-// Importa os tipos necessários do Express para lidar com requisições, respostas e o próximo middleware.
 import { NextFunction, Request, Response } from "express";
-// Importa o cliente Prisma para interagir com o banco de dados.
 import { prisma } from "../database";
-// Importa a classe HttpError para lidar com erros personalizados.
 import { HttpError } from "../errors/HttpError";
-// Importa o módulo fs para manipulação de arquivos no sistema.
 import fs from "node:fs";
-// Importa o módulo path para manipulação de caminhos de arquivos.
 import path from "node:path";
 
 // Define o middleware para deletar uma imagem associada a um registro no banco de dados.

@@ -18,16 +18,20 @@ export class PizzasWebController {
     index: Handler = async (req, res, next) => {
         try {
             // Busca todas as pizzas no banco de dados, incluindo os tamanhos disponíveis para cada pizza.
-            const pizzas = await prisma.pizza.findMany({ include: { PizzaSizes: true } })
+            const pizzas = await prisma.pizza.findMany({
+                orderBy: { title: "asc" },
+                include: { PizzaSizes: { orderBy: { size: "desc" } } }
+            })
 
             // Obtém os dados do usuário autenticado do objeto `res.locals`.
             const userData: UserData = res.locals.user
 
             // Renderiza a página "index" com a lista de pizzas e os dados do usuário.
-            res.render("index", { pizzas, userData })
+            return res.render("index", { pizzas, userData })
+
         } catch (error) {
             // Em caso de erro, passa o erro para o middleware de tratamento de erros.
-            next(error)
+            next(error) // Encaminha erros ao middleware.
         }
     }
 
@@ -35,16 +39,20 @@ export class PizzasWebController {
     admin: Handler = async (req, res, next) => {
         try {
             // Busca todas as pizzas no banco de dados, incluindo os tamanhos disponíveis para cada pizza.
-            const pizzas = await prisma.pizza.findMany({ include: { PizzaSizes: true } })
+            const pizzas = await prisma.pizza.findMany({
+                orderBy: { title: "asc" },
+                include: { PizzaSizes: { orderBy: { size: "desc" } } }
+            })
 
             // Obtém os dados do usuário autenticado do objeto `res.locals`.
             const userData: UserData = res.locals.user
 
             // Renderiza a página "admin" com a lista de pizzas e os dados do usuário.
             res.render("admin", { pizzas, userData })
+
         } catch (error) {
             // Em caso de erro, passa o erro para o middleware de tratamento de erros.
-            next(error)
+            next(error) // Encaminha erros ao middleware.
         }
     }
 }

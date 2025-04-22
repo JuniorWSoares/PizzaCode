@@ -1,6 +1,4 @@
-// Importa o pacote multer para lidar com upload de arquivos.
 import multer from "multer";
-// Importa o módulo path do Node.js para manipulação de caminhos de arquivos.
 import path from "node:path";
 
 // Configura o armazenamento dos arquivos utilizando o diskStorage do multer.

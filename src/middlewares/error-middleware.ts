@@ -1,7 +1,4 @@
-// Importa o tipo ErrorRequestHandler do Express para definir middlewares de tratamento de erros.
 import { ErrorRequestHandler } from "express";
-
-// Importa a classe HttpError para criar e tratar erros personalizados.
 import { HttpError } from "../errors/HttpError";
 
 // Middleware de tratamento de erros.
