@@ -15,6 +15,9 @@
           <!-- Campo para a descrição da pizza -->
           <input type="text" name="description" id="description" placeholder="Descrição" required>
           <!-- Campo para o upload da imagem da pizza -->
+          <label for="image" class="custom-file-upload">
+            <img src="/images/add-image.png"> Imagem
+          </label>
           <input type="file" name="image" id="image" required>
           <!-- Botão para enviar o formulário -->
           <button class="pizza-send-button" type="submit">Cadastrar</button>
@@ -31,6 +34,9 @@
           <!-- Campo para a descrição atualizada da pizza -->
           <input type="text" name="description" id="updated-description" placeholder="Descrição" required>
           <!-- Campo para o upload da nova imagem da pizza -->
+          <label for="image" class="custom-file-upload">
+            <img src="/images/add-image.png"> Imagem
+          </label>
           <input type="file" name="image" id="updated-image" required>
           <!-- Botão para enviar o formulário de atualização -->
           <button class="pizza-send-button" type="submit">Atualizar</button>
@@ -86,10 +92,10 @@
               <option value="M">M</option>
               <option value="G">G</option>
             </select>
-            <!-- Campo para o ID da pizza -->
-            <input type="text" name="pizzaId" id="pizzaId" placeholder="ID" required>
             <!-- Campo para o preço da pizza -->
             <input type="text" name="price" id="price" placeholder="Preço" required>
+            <!-- Campo para o ID da pizza -->
+            <input type="text" name="pizzaId" id="pizzaId" placeholder="ID da pizza" required>
           </div>
           <!-- Botão para enviar o formulário -->
           <button class="pizza-send-button" type="submit">Cadastrar</button>

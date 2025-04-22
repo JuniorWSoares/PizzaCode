@@ -32,6 +32,10 @@
     font-size: 1em; /* Tamanho da fonte */
 }
 
+#register-form-container input[type="date"] {
+    cursor: pointer;
+}
+
 /* Estilo para os botões */
 #login-form-container button, #register-form-container button {
     width: 100%; /* Largura total */
