@@ -20,6 +20,7 @@
     --dark-color: #232323; /* Preto escuro */
     --light-color: #F5F5F5; /* Branco claro */
     --white-color: #fff; /* Branco */
+    --red-color : #f00000; /* Vermelho */
 }
 
 /* Estiliza o container principal */
@@ -281,6 +282,20 @@ input[type="file"] {
     max-width: 100%;
     border: 1px solid var(--gray-400);
     border-radius: 5px;
+}
+
+/* Estiliza o input do formulário de tamanho de pizza quando houver erro */
+#pizza-sized-form input.error-input {
+    border: 1px solid var(--red-color);
+}
+
+/* Estiliza mensagens de erro no formulário de tamanho de pizza */
+#pizza-sized-form span.error-message-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--red-color);
+    font-weight: 600;
 }
 
 /* Estiliza selects no formulário de atualização de tamanho */

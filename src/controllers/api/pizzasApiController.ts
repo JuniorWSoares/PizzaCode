@@ -3,6 +3,7 @@
 import { Handler } from "express";
 import { prisma } from "../../database";
 import { AddPizzaSizeRequestSchema, CreatePizzaRequestSchema, UpdatePizzaSizeRequestSchema } from "./schemas/pizzasRequestSchema";
+import { HttpError } from "../../errors/HttpError";
 
 // Define a classe PizzasApiController, que contém os métodos para manipular as requisições relacionadas a pizzas.
 export class PizzasApiController {
@@ -59,10 +60,16 @@ export class PizzasApiController {
         try {
             const body = AddPizzaSizeRequestSchema.parse(req.body)
 
-            // Cria um novo tamanho de pizza no banco de dados.
-            await prisma.pizzaSize.create({ data: body })
+            // Verifica se o ID da pizza existe no banco de dados.
+            const pizzaExists = await prisma.pizza.findUnique({ where: { id: Number(body.pizzaId) } })
+            if (!pizzaExists) {
+                throw new HttpError(404, "Pizza não encontrada!")
+            }
 
-            res.redirect("/admin#menu")
+            // Cria um novo tamanho de pizza no banco de dados.
+            const newSize = await prisma.pizzaSize.create({ data: body })
+
+            res.status(201).json({newSize})
         } catch (error) {
             next(error)
         }
