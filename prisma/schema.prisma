@@ -44,37 +44,47 @@ model Address {
 }
 
 model Order {
-  id         Int           @id @default(autoincrement())
+  id         Int               @id @default(autoincrement())
   customerId Int
-  total      Decimal       @db.Decimal(10, 2)
-  createdAt  DateTime      @default(now())
-  pizzas     OrderPizzas[]
-  customer   User          @relation(fields: [customerId], references: [id])
+  total      Decimal           @db.Decimal(10, 2)
+  createdAt  DateTime          @default(now())
+  status     OrderStatus       @default(PENDING)
+  pizzas     OrderPizzaSizes[]
+  customer   User              @relation(fields: [customerId], references: [id])
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PREPARING
+  SHIPPED
+  DELIVERED
+  CANCELED
 }
 
 model Pizza {
-  id          Int           @id @default(autoincrement())
-  title       String        @db.VarChar(255)
+  id          Int         @id @default(autoincrement())
+  title       String      @db.VarChar(255)
   description String
-  url         String        @db.VarChar(255)
-  orders      OrderPizzas[]
+  url         String      @db.VarChar(255)
   pizzaSizes  PizzaSize[]
 }
 
 model PizzaSize {
-  id      Int     @id @default(autoincrement())
+  id      Int               @id @default(autoincrement())
   pizzaId Int
-  price   Decimal @db.Decimal(10, 2)
-  size    String  @db.Char(1)
-  pizza   Pizza   @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
+  price   Decimal           @db.Decimal(10, 2)
+  size    String            @db.Char(1)
+  pizza   Pizza             @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
+  orders  OrderPizzaSizes[]
 }
 
-model OrderPizzas {
-  pizzaId  Int
-  orderId  Int
-  quantity Int   @default(1)
-  pizza    Pizza @relation(fields: [pizzaId], references: [id])
-  order    Order @relation(fields: [orderId], references: [id])
+model OrderPizzaSizes {
+  pizzaSizeId Int
+  orderId     Int
+  quantity    Int       @default(1)
+  pizzaSize   PizzaSize @relation(fields: [pizzaSizeId], references: [id])
+  order       Order     @relation(fields: [orderId], references: [id])
 
-  @@id([pizzaId, orderId])
+  @@id([pizzaSizeId, orderId])
 }
