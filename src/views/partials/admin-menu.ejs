@@ -126,7 +126,7 @@
       <!-- Lista de tamanhos e preços cadastrados -->
       <ul id="size-pizza-menu-container">
         <% for(let i = 0; i < pizzas.length; i++) { %>
-          <% for(let j = 0; j < pizzas[i].PizzaSizes.length; j++) { %>
+          <% for(let j = 0; j < pizzas[i].pizzaSizes.length; j++) { %>
           <li class="pizza-size-card">
             <div class="left-content">
               <!-- Exibe a imagem da pizza -->
@@ -134,9 +134,9 @@
               <div>
                 <!-- Exibe o tamanho, título e preço da pizza -->
                 <h3> 
-                  <span id="size-color"><%= pizzas[i].PizzaSizes[j].size %> </span> -
+                  <span id="size-color"><%= pizzas[i].pizzaSizes[j].size %> </span> -
                   <%= pizzas[i].title %> - 
-                  R&dollar; <%= pizzas[i].PizzaSizes[j].price %>
+                  R&dollar; <%= pizzas[i].pizzaSizes[j].price %>
                 </h3>
               </div>
             </div>
@@ -144,16 +144,16 @@
             <div class="buttons">
 
               <!-- Botão para excluir tamanho e preço -->
-              <form action="api/pizzas/delete-size/<%= pizzas[i].PizzaSizes[j].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este tamanho?')">
+              <form action="api/pizzas/delete-size/<%= pizzas[i].pizzaSizes[j].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este tamanho?')">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
 
               <!-- Botão para abrir o formulário de atualização de tamanho e preço -->
               <button 
                 class="pizza-size-update-button" 
-                data-id="<%= pizzas[i].PizzaSizes[j].id %>"
-                data-size="<%= pizzas[i].PizzaSizes[j].size %>" 
-                data-price="<%= pizzas[i].PizzaSizes[j].price %>">
+                data-id="<%= pizzas[i].pizzaSizes[j].id %>"
+                data-size="<%= pizzas[i].pizzaSizes[j].size %>" 
+                data-price="<%= pizzas[i].pizzaSizes[j].price %>">
                 <img src="images/atualizar.png">
               </button>
             </div>

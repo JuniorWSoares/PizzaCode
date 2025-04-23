@@ -32,24 +32,24 @@ enum UserRoles {
 
 model Address {
   id           Int     @id @default(autoincrement())
+  userId       Int     @unique
   cep          String  @db.VarChar(10)
   state        String  @db.VarChar(255)
   city         String  @db.VarChar(255)
   neighborhood String  @db.VarChar(255)
-  road         String  @db.VarChar(255)
+  street       String  @db.VarChar(255)
   number       Int
   complement   String?
-  userId       Int     @unique
   user         User    @relation(fields: [userId], references: [id])
 }
 
 model Order {
   id         Int           @id @default(autoincrement())
   customerId Int
-  customer   User          @relation(fields: [customerId], references: [id])
   total      Decimal       @db.Decimal(10, 2)
   createdAt  DateTime      @default(now())
   pizzas     OrderPizzas[]
+  customer   User          @relation(fields: [customerId], references: [id])
 }
 
 model Pizza {
@@ -58,14 +58,14 @@ model Pizza {
   description String
   url         String        @db.VarChar(255)
   orders      OrderPizzas[]
-  PizzaSizes  PizzaSize[]
+  pizzaSizes  PizzaSize[]
 }
 
 model PizzaSize {
   id      Int     @id @default(autoincrement())
+  pizzaId Int
   price   Decimal @db.Decimal(10, 2)
   size    String  @db.Char(1)
-  pizzaId Int
   pizza   Pizza   @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
 }
 

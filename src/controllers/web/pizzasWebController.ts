@@ -20,7 +20,7 @@ export class PizzasWebController {
             // Busca todas as pizzas no banco de dados, incluindo os tamanhos disponíveis para cada pizza.
             const pizzas = await prisma.pizza.findMany({
                 orderBy: { title: "asc" },
-                include: { PizzaSizes: { orderBy: { size: "desc" } } }
+                include: { pizzaSizes: { orderBy: { size: "desc" } } }
             })
 
             // Obtém os dados do usuário autenticado do objeto `res.locals`.
@@ -41,7 +41,7 @@ export class PizzasWebController {
             // Busca todas as pizzas no banco de dados, incluindo os tamanhos disponíveis para cada pizza.
             const pizzas = await prisma.pizza.findMany({
                 orderBy: { title: "asc" },
-                include: { PizzaSizes: { orderBy: { size: "desc" } } }
+                include: { pizzaSizes: { orderBy: { size: "desc" } } }
             })
 
             // Obtém os dados do usuário autenticado do objeto `res.locals`.
