@@ -44,13 +44,13 @@ model Address {
 }
 
 model Order {
-  id         Int               @id @default(autoincrement())
+  id         Int           @id @default(autoincrement())
   customerId Int
-  total      Decimal           @db.Decimal(10, 2)
-  createdAt  DateTime          @default(now())
-  status     OrderStatus       @default(PENDING)
-  pizzas     OrderPizzaSizes[]
-  customer   User              @relation(fields: [customerId], references: [id])
+  total      Decimal       @db.Decimal(10, 2)
+  createdAt  DateTime      @default(now())
+  status     OrderStatus   @default(PENDING)
+  pizzas     OrderPizzas[]
+  customer   User          @relation(fields: [customerId], references: [id])
 }
 
 enum OrderStatus {
@@ -62,29 +62,29 @@ enum OrderStatus {
   CANCELED
 }
 
-model Pizza {
-  id          Int         @id @default(autoincrement())
-  title       String      @db.VarChar(255)
+model PizzaType {
+  id          Int     @id @default(autoincrement())
+  title       String  @db.VarChar(255)
   description String
-  url         String      @db.VarChar(255)
-  pizzaSizes  PizzaSize[]
+  url         String  @db.VarChar(255)
+  pizzas      Pizza[]
 }
 
-model PizzaSize {
-  id      Int               @id @default(autoincrement())
-  pizzaId Int
-  price   Decimal           @db.Decimal(10, 2)
-  size    String            @db.Char(1)
-  pizza   Pizza             @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
-  orders  OrderPizzaSizes[]
+model Pizza {
+  id          Int           @id @default(autoincrement())
+  pizzaTypeId Int
+  price       Decimal       @db.Decimal(10, 2)
+  size        String        @db.Char(1)
+  pizzaType   PizzaType     @relation(fields: [pizzaTypeId], references: [id], onDelete: Cascade)
+  orders      OrderPizzas[]
 }
 
-model OrderPizzaSizes {
-  pizzaSizeId Int
-  orderId     Int
-  quantity    Int       @default(1)
-  pizzaSize   PizzaSize @relation(fields: [pizzaSizeId], references: [id])
-  order       Order     @relation(fields: [orderId], references: [id])
+model OrderPizzas {
+  pizzaId  Int
+  orderId  Int
+  quantity Int   @default(1)
+  pizza    Pizza @relation(fields: [pizzaId], references: [id])
+  order    Order @relation(fields: [orderId], references: [id])
 
-  @@id([pizzaSizeId, orderId])
+  @@id([pizzaId, orderId])
 }

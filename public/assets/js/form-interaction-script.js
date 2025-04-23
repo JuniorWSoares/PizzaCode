@@ -1,28 +1,28 @@
 // Adiciona eventos de clique a todos os botões de atualização de pizza
-document.querySelectorAll(".pizza-update-button").forEach((btn) => {
+document.querySelectorAll(".pizza-type-update-button").forEach((btn) => {
   btn.addEventListener("click", (ev) => {
     // Seleciona o card da pizza correspondente ao botão clicado
-    const pizzaCard = ev.target.closest(".pizza-card")
+    const pizzaTypeCard = ev.target.closest(".pizza-type-card")
     const updatedButton = ev.target.closest("button") // Botão de atualização clicado
-    const deletedButton = pizzaCard.querySelector(".pizza-delete-button") // Botão de exclusão correspondente
+    const deletedButton = pizzaTypeCard.querySelector(".pizza-delete-button") // Botão de exclusão correspondente
 
     // Se o card já estiver destacado, recarrega a página
-    if (pizzaCard.classList.contains("highlight")) {
+    if (pizzaTypeCard.classList.contains("highlight")) {
       location.reload()
       return
     }
 
     // Remove o destaque de todos os cards de pizza
-    document.querySelectorAll(".pizza-card").forEach((card) => {
+    document.querySelectorAll(".pizza-type-card").forEach((card) => {
       if (card.classList.contains("highlight")) {
         card.classList.remove("highlight")
-        card.querySelector(".pizza-update-button").classList.remove("highlight")
+        card.querySelector(".pizza-type-update-button").classList.remove("highlight")
         card.querySelector(".pizza-delete-button").classList.remove("highlight")
       }
     })
 
     // Destaca o card, o botão de atualização e o botão de exclusão
-    pizzaCard.classList.toggle("highlight")
+    pizzaTypeCard.classList.toggle("highlight")
     updatedButton.classList.toggle("highlight")
     deletedButton.classList.toggle("highlight")
 
@@ -49,36 +49,36 @@ document.querySelectorAll(".pizza-update-button").forEach((btn) => {
 
 
 // Adiciona eventos de clique a todos os botões de atualização de tamanho de pizza
-document.querySelectorAll(".pizza-size-update-button").forEach((btn) => {
+document.querySelectorAll(".pizza-sized-update-button").forEach((btn) => {
   btn.addEventListener("click", (ev) => {
     // Seleciona o card do tamanho da pizza correspondente ao botão clicado
-    const pizzaSizeCard = ev.target.closest(".pizza-size-card")
+    const pizzaSizedCard = ev.target.closest(".pizza-sized-card")
     const updatedButton = ev.target.closest("button") // Botão de atualização clicado
-    const deletedButton = pizzaSizeCard.querySelector(".pizza-delete-button") // Botão de exclusão correspondente
+    const deletedButton = pizzaSizedCard.querySelector(".pizza-delete-button") // Botão de exclusão correspondente
 
     // Se o card já estiver destacado, recarrega a página
-    if (pizzaSizeCard.classList.contains("highlight")) {
+    if (pizzaSizedCard.classList.contains("highlight")) {
       location.reload()
       return
     }
 
     // Remove o destaque de todos os cards de tamanho de pizza
-    document.querySelectorAll(".pizza-size-card").forEach((card) => {
+    document.querySelectorAll(".pizza-sized-card").forEach((card) => {
       if (card.classList.contains("highlight")) {
         card.classList.remove("highlight")
-        card.querySelector(".pizza-size-update-button").classList.remove("highlight")
+        card.querySelector(".pizza-sized-update-button").classList.remove("highlight")
         card.querySelector(".pizza-delete-button").classList.remove("highlight")
       }
     })
 
     // Destaca o card, o botão de atualização e o botão de exclusão
-    pizzaSizeCard.classList.toggle("highlight")
+    pizzaSizedCard.classList.toggle("highlight")
     deletedButton.classList.toggle("highlight")
     updatedButton.classList.toggle("highlight")
 
     // Esconde o formulário de tamanho de pizza e exibe o formulário de atualização
     document.getElementById("pizza-sized-form-container").setAttribute("hidden", true)
-    document.getElementById("update-pizza-size-container").removeAttribute("hidden")
+    document.getElementById("update-pizza-sized-container").removeAttribute("hidden")
 
     // Preenche os campos do formulário de atualização com os dados do tamanho da pizza
     const size = document.getElementById("updated-size")
@@ -90,6 +90,6 @@ document.querySelectorAll(".pizza-size-update-button").forEach((btn) => {
     id.value = btn.dataset.id
 
     // Define a ação do formulário para a rota de atualização do tamanho da pizza
-    document.getElementById("update-pizza-size-form").action = `/api/pizzas/update-size/${id.value}`
+    document.getElementById("update-pizza-sized-form").action = `/api/pizzas/update-size/${id.value}`
   })
 })

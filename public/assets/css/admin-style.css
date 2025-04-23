@@ -128,7 +128,7 @@ input[type="file"] {
 /* Estiliza containers de formulários */
 #pizza-type-form-container,
 #update-pizza-type-container,
-#update-pizza-size-container,
+#update-pizza-sized-container,
 #pizza-sized-form-container {
     width: 100%;
 }
@@ -155,8 +155,8 @@ input[type="file"] {
 }
 
 /* Estiliza o menu de pizzas cadastradas */
-#pizza-menu-container,
-#size-pizza-menu-container {
+#pizza-type-menu-container,
+#pizza-sized-menu-container {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -167,8 +167,8 @@ input[type="file"] {
 }
 
 /* Estiliza os cartões de pizza */
-.pizza-card,
-.pizza-size-card {
+.pizza-type-card,
+.pizza-sized-card {
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -182,7 +182,7 @@ input[type="file"] {
 }
 
 /* Estiliza imagens nos cartões de pizza */
-.pizza-card img {
+.pizza-type-card img {
     width: 10%;
     height: auto;
     border-radius: 5px;
@@ -206,9 +206,9 @@ input[type="file"] {
 }
 
 /* Estiliza botões de atualização e exclusão */
-.pizza-update-button,
+.pizza-type-update-button,
 .pizza-delete-button,
-.pizza-size-update-button {
+.pizza-sized-update-button {
     width: 40px;
     height: 40px;
     display: flex;
@@ -221,11 +221,11 @@ input[type="file"] {
 }
 
 /* Estiliza elementos destacados */
-.pizza-card.highlight,
-.pizza-update-button.highlight,
+.pizza-type-card.highlight,
+.pizza-type-update-button.highlight,
 .pizza-delete-button.highlight,
-.pizza-size-card.highlight,
-.pizza-size-update-button.highlight {
+.pizza-sized-card.highlight,
+.pizza-sized-update-button.highlight {
     background-color: var(--blue-color);
     transition: background-color 0.3s ease;
 }
@@ -239,14 +239,14 @@ input[type="file"] {
 
 /* Estilo ao passar o mouse nos botões */
 .pizza-delete-button:hover,
-.pizza-update-button:hover,
-.pizza-size-update-button:hover {
+.pizza-type-update-button:hover,
+.pizza-sized-update-button:hover {
     background-color: var(--gray-100);
 }
 
 /* Estiliza formulários de tamanho de pizza */
 #pizza-sized-form,
-#update-pizza-size-form {
+#update-pizza-sized-form {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -299,7 +299,7 @@ input[type="file"] {
 }
 
 /* Estiliza selects no formulário de atualização de tamanho */
-#update-pizza-size-form select {
+#update-pizza-sized-form select {
     padding: 5px 5px;
     font-weight: 700;
     font-size: 1rem;
@@ -310,7 +310,7 @@ input[type="file"] {
 }
 
 /* Estiliza inputs no formulário de atualização de tamanho */
-#update-pizza-size-form input {
+#update-pizza-sized-form input {
     width: 45%;
     padding: 0.5rem;
     border: 1px solid var(--gray-400);
@@ -318,7 +318,7 @@ input[type="file"] {
 }
 
 /* Estiliza imagens nos cartões de tamanho de pizza */
-.pizza-size-card img {
+.pizza-sized-card img {
     width: 7%;
     height: 7%;
     border-radius: 5px;

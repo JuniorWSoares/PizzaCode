@@ -15,14 +15,14 @@ pizzaSizedForm.addEventListener("submit", async (event) => {
 
         if (!response.ok) {
             const errorData = await response.json()
-            const errorMessage = document.getElementById("pizza-id-error-message")
-            const pizzaId = document.getElementById("pizzaId")
-            pizzaId.classList.add("error-input")
+            const errorMessage = document.getElementById("pizza-error-message")
+            const pizzaTypeId = document.getElementById("pizzaTypeId")
+            pizzaTypeId.classList.add("error-input")
             errorMessage.textContent = errorData.error
             errorMessage.classList.add("error-message-input")
 
             setTimeout(() => {
-                pizzaId.classList.remove("error-input")
+                pizzaTypeId.classList.remove("error-input")
                 errorMessage.textContent = ""
                 errorMessage.classList.remove("error-message-input")
             }, 2000)

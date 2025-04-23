@@ -11,7 +11,7 @@ export const deleteImageMiddleware = async (req: Request, res: Response, next: N
         const id = Number(req.params.id)
 
         // Busca no banco de dados o registro correspondente ao ID, selecionando apenas a URL da imagem.
-        const record = await prisma.pizza.findUnique({
+        const record = await prisma.pizzaType.findUnique({
             where: { id },
             select: { url: true }
         })

@@ -34,7 +34,7 @@
           <!-- Campo para a descrição atualizada da pizza -->
           <input type="text" name="description" id="updated-description" placeholder="Descrição" required>
           <!-- Campo para o upload da nova imagem da pizza -->
-          <label for="image" class="custom-file-upload">
+          <label for="updated-image" class="custom-file-upload">
             <img src="/images/add-image.png"> Imagem
           </label>
           <input type="file" name="image" id="updated-image" required>
@@ -44,32 +44,32 @@
       </div>
 
       <!-- Lista de pizzas cadastradas -->
-      <ul id="pizza-menu-container">
-        <% for(let i = 0; i < pizzas.length; i++) { %>
-          <li class="pizza-card">
+      <ul id="pizza-type-menu-container">
+        <% for(let i = 0; i < pizzaTypes.length; i++) { %>
+          <li class="pizza-type-card">
             <div class="left-content">
               <!-- Exibe a imagem da pizza -->
-              <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
+              <img src="<%= pizzaTypes[i].url %>" alt="<%= pizzaTypes[i].title %>">
               <div>
                 <!-- Exibe o título e ID da pizza -->
-                <h3><%= pizzas[i].title %> - ID: <%= pizzas[i].id %></h3>
+                <h3><%= pizzaTypes[i].title %> - ID: <%= pizzaTypes[i].id %></h3>
                 <!-- Exibe a descrição da pizza -->
-                <p><%= pizzas[i].description %></p>
+                <p><%= pizzaTypes[i].description %></p>
               </div>
             </div>
             <div class="buttons">
 
               <!-- Botão para excluir uma pizza -->
-              <form action="api/pizzas/delete/<%= pizzas[i].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esta pizza?')">
+              <form action="api/pizzas/delete/<%= pizzaTypes[i].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esta pizza?')">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
 
               <!-- Botão para abrir o formulário de atualização da pizza -->
               <button 
-                class="pizza-update-button" 
-                data-id="<%= pizzas[i].id %>" 
-                data-title="<%= pizzas[i].title %>"
-                data-description="<%= pizzas[i].description %>">
+                class="pizza-type-update-button" 
+                data-id="<%= pizzaTypes[i].id %>" 
+                data-title="<%= pizzaTypes[i].title %>"
+                data-description="<%= pizzaTypes[i].description %>">
                 <img src="images/atualizar.png">
               </button>
             </div>
@@ -95,17 +95,17 @@
             <!-- Campo para o preço da pizza -->
             <input type="text" name="price" id="price" placeholder="Preço" required>
             <!-- Campo para o ID da pizza -->
-            <input type="text" name="pizzaId" id="pizzaId" placeholder="ID da pizza" required>
+            <input type="text" name="pizzaTypeId" id="pizzaTypeId" placeholder="ID da pizza" required>
           </div>
-          <span id="pizza-id-error-message" class="input-error-message"></span>
+          <span id="pizza-error-message" class="input-error-message"></span>
           <!-- Botão para enviar o formulário -->
           <button class="pizza-send-button" type="submit">Cadastrar</button>
         </form>
       </div>
 
       <!-- Formulário oculto para atualizar tamanho e preço -->
-      <div id="update-pizza-size-container" hidden>
-        <form id="update-pizza-size-form" action="" method="post">
+      <div id="update-pizza-sized-container" hidden>
+        <form id="update-pizza-sized-form" action="" method="post">
           <div class="left-side">
             <!-- Seleção do tamanho atualizado -->
             <select name="size" id="updated-size">
@@ -124,19 +124,19 @@
       </div>
 
       <!-- Lista de tamanhos e preços cadastrados -->
-      <ul id="size-pizza-menu-container">
-        <% for(let i = 0; i < pizzas.length; i++) { %>
-          <% for(let j = 0; j < pizzas[i].pizzaSizes.length; j++) { %>
-          <li class="pizza-size-card">
+      <ul id="pizza-sized-menu-container">
+        <% for(let i = 0; i < pizzaTypes.length; i++) { %>
+          <% for(let j = 0; j < pizzaTypes[i].pizzas.length; j++) { %>
+          <li class="pizza-sized-card">
             <div class="left-content">
               <!-- Exibe a imagem da pizza -->
-              <img src="<%= pizzas[i].url %>" alt="<%= pizzas[i].title %>">
+              <img src="<%= pizzaTypes[i].url %>" alt="<%= pizzaTypes[i].title %>">
               <div>
                 <!-- Exibe o tamanho, título e preço da pizza -->
                 <h3> 
-                  <span id="size-color"><%= pizzas[i].pizzaSizes[j].size %> </span> -
-                  <%= pizzas[i].title %> - 
-                  R&dollar; <%= pizzas[i].pizzaSizes[j].price %>
+                  <span id="size-color"><%= pizzaTypes[i].pizzas[j].size %> </span> -
+                  <%= pizzaTypes[i].title %> - 
+                  R&dollar; <%= pizzaTypes[i].pizzas[j].price %>
                 </h3>
               </div>
             </div>
@@ -144,16 +144,16 @@
             <div class="buttons">
 
               <!-- Botão para excluir tamanho e preço -->
-              <form action="api/pizzas/delete-size/<%= pizzas[i].pizzaSizes[j].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este tamanho?')">
+              <form action="api/pizzas/delete-size/<%= pizzaTypes[i].pizzas[j].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este tamanho?')">
                 <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
               </form>
 
               <!-- Botão para abrir o formulário de atualização de tamanho e preço -->
               <button 
-                class="pizza-size-update-button" 
-                data-id="<%= pizzas[i].pizzaSizes[j].id %>"
-                data-size="<%= pizzas[i].pizzaSizes[j].size %>" 
-                data-price="<%= pizzas[i].pizzaSizes[j].price %>">
+                class="pizza-sized-update-button" 
+                data-id="<%= pizzaTypes[i].pizzas[j].id %>"
+                data-size="<%= pizzaTypes[i].pizzas[j].size %>" 
+                data-price="<%= pizzaTypes[i].pizzas[j].price %>">
                 <img src="images/atualizar.png">
               </button>
             </div>
