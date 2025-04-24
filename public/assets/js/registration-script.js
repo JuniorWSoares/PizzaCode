@@ -5,13 +5,16 @@ document.getElementById("user-icon").addEventListener("click", function() {
 })
 
 // Adiciona um evento de clique ao botão de login
-document.getElementById("login-button").addEventListener("click", function(event) {
-  event.preventDefault() // Impede o comportamento padrão do botão (recarregar a página)
-  // Oculta as opções do menu principal
-  document.getElementById("menu-options").classList.add("hidden")
-  // Exibe o formulário de login
-  document.getElementById("login-form-container").classList.remove("hidden")
-})
+const loginButton = document.getElementById("login-button")
+if (loginButton) {
+  loginButton.addEventListener("click", function(event) {
+    event.preventDefault() // Impede o comportamento padrão do botão (recarregar a página)
+    // Oculta as opções do menu principal
+    document.getElementById("menu-options").classList.add("hidden")
+    // Exibe o formulário de login
+    document.getElementById("login-form-container").classList.remove("hidden")
+  })
+}
 
 // Adiciona um evento de clique ao link "Cadastrar-se"
 document.getElementById("show-register").addEventListener("click", function(event) {
