@@ -24,7 +24,7 @@
               <% for(let j = 0; j < pizzaTypes[i].pizzas.length; j++) { %>
                 <label for="<%= pizzaTypes[i].title %>-size-<%= pizzaTypes[i].pizzas[j].size %>">
                   <!-- Opção de tamanho com botão de rádio -->
-                  <input type="radio" id="<%= pizzaTypes[i].title %>-size-<%= pizzaTypes[i].pizzas[j].size %>" name="id" value="<%= pizzaTypes[i].pizzas[j].id %>" required>
+                  <input type="radio" id="<%= pizzaTypes[i].title %>-size-<%= pizzaTypes[i].pizzas[j].size %>" name="pizza" value=" <%= JSON.stringify(pizzaTypes[i].pizzas[j]) %>" required>
                   <!-- Exibe o tamanho e o preço da pizza -->
                   <%= pizzaTypes[i].pizzas[j].size %> - R$ <%= pizzaTypes[i].pizzas[j].price %>
                 </label>

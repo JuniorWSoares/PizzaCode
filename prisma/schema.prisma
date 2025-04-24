@@ -83,8 +83,8 @@ model OrderPizzas {
   pizzaId  Int
   orderId  Int
   quantity Int   @default(1)
-  pizza    Pizza @relation(fields: [pizzaId], references: [id])
-  order    Order @relation(fields: [orderId], references: [id])
+  pizza    Pizza @relation(fields: [pizzaId], references: [id], onDelete: Cascade)
+  order    Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
 
   @@id([pizzaId, orderId])
 }
