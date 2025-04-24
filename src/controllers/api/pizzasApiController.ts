@@ -5,6 +5,12 @@ import { prisma } from "../../database";
 import { AddPizzaRequestSchema, CreatePizzaTypeRequestSchema, UpdatePizzaRequestSchema } from "./schemas/pizzasRequestSchema";
 import { HttpError } from "../../errors/HttpError";
 
+interface PizzaTypeData {
+    title: string
+    description: string
+    url?: string
+}
+
 // Define a classe PizzasApiController, que contém os métodos para manipular as requisições relacionadas a pizzas.
 export class PizzasApiController {
     // Método "create": Responsável por criar um novo tipo de pizza.
@@ -12,8 +18,7 @@ export class PizzasApiController {
     create: Handler = async (req, res, next) => {
         try {
             const { description, title } = CreatePizzaTypeRequestSchema.parse(req.body)
-            const imageUrl = `/uploads/${req.file?.filename}` // Define a URL da imagem com base no arquivo enviado.
-            const data = { description, title, url: imageUrl }
+            const data = { description, title, url: `/uploads/${req.file?.filename}` }
 
             // Cria um novo tipo de pizza no banco de dados.
             await prisma.pizzaType.create({ data })
@@ -30,8 +35,13 @@ export class PizzasApiController {
     update: Handler = async (req, res, next) => {
         try {
             const { description, title } = CreatePizzaTypeRequestSchema.parse(req.body)
-            const imageUrl = `/uploads/${req.file?.filename}`
-            const data = { description, title, url: imageUrl }
+            let data: PizzaTypeData = { description, title}
+
+            if (req.file?.filename) {
+                data.url = `/uploads/${req.file.filename}` // Atualiza a URL da imagem se um novo arquivo for enviado.
+            } else {
+                data.url = res.locals.record.url // Mantém a URL antiga se nenhum novo arquivo for enviado.
+            }
 
             // Atualiza o tipo de pizza com base no ID fornecido nos parâmetros da URL.
             await prisma.pizzaType.update({ where: { id: Number(req.params.id) }, data })

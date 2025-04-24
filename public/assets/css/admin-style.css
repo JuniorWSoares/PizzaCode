@@ -91,7 +91,7 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 5px 15px;
+    padding: 6px 15px;
     cursor: pointer;
     background-color: var(--gray);
     border-radius: 5px;
@@ -116,7 +116,7 @@ input[type="file"] {
     border: 2px solid var(--dark-color);
     border-radius: 5px;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 6px 10px;
     transition: background 0.3s; /* Transição ao passar o mouse */
 }
 

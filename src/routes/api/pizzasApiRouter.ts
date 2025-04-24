@@ -1,7 +1,7 @@
 import express from "express";
 import { PizzasApiController } from "../../controllers/api/pizzasApiController";
 import { upload } from "../../middlewares/upload-middleware";
-import { deleteImageMiddleware } from "../../middlewares/delete-image-middleware";
+import { deleteImageMiddleware, updateImageMiddleware } from "../../middlewares/delete-image-middlewares";
 
 const router = express.Router()
 
@@ -14,7 +14,7 @@ router.post("/create", upload.single('image'), pizzasApiController.create)
 router.post("/delete/:id", deleteImageMiddleware, pizzasApiController.delete)
 
 // Define a rota para atualizar os dados de um tipo pizza, incluindo a possibilidade de alterar a imagem.
-router.post("/update/:id", upload.single('image'), pizzasApiController.update)
+router.post("/update/:id", upload.single('image'), updateImageMiddleware, pizzasApiController.update)
 
 // Define a rota para adicionar um novo tamanho a uma pizza.
 router.post("/addSize", pizzasApiController.addSize)
