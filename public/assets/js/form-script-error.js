@@ -7,7 +7,7 @@ pizzaSizedForm.addEventListener("submit", async (event) => {
     const data = Object.fromEntries(formData.entries()) 
 
     try {
-        const response = await fetch("/api/pizzas/addSize", {
+        const response = await fetch("/api/pizzas/add-size", {
             method: "POST",
             headers: {"Content-Type": "application/json",},
             body: JSON.stringify(data),

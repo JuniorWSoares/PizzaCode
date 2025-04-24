@@ -17,7 +17,7 @@ router.post("/delete/:id", deleteImageMiddleware, pizzasApiController.delete)
 router.post("/update/:id", upload.single('image'), updateImageMiddleware, pizzasApiController.update)
 
 // Define a rota para adicionar um novo tamanho a uma pizza.
-router.post("/addSize", pizzasApiController.addSize)
+router.post("/add-size", pizzasApiController.addSize)
 
 // Define a rota para atualizar o tamanho de uma pizza específica.
 router.post("/update-size/:id", pizzasApiController.updateSize)

@@ -87,7 +87,7 @@ registerForm.addEventListener("submit", async (event) => {
         errorMessage.textContent = ""
         email.classList.remove("error")
         phone.classList.remove("error")
-      }, 2000)
+      }, 3000)
 
       return // Interrompe a execução caso haja erro
     }
@@ -102,7 +102,7 @@ registerForm.addEventListener("submit", async (event) => {
       successMessage.textContent = "" 
       // Redireciona o usuário para a página inicial em caso de sucesso
       window.location.href = "/"
-    }, 2000)
+    }, 3000)
 
   } catch (error) {
     // Trata erros inesperados, como falhas de rede
@@ -148,13 +148,13 @@ loginForm.addEventListener("submit", async (event) => {
         errorMessage.textContent = ""
         email.classList.remove("error")
         password.classList.remove("error")
-      }, 2000)
+      }, 3000)
 
       return // Interrompe a execução caso haja erro
     }
 
     const successMessage = document.getElementById("login-message") // Seleciona o elemento para exibir mensagens de sucesso
-    successMessage.textContent = "Login realizado com sucesso!" // Exibe mensagem de sucesso
+    successMessage.textContent = "Seja bem-vindo(a) de volta!" // Exibe mensagem de sucesso
     successMessage.classList.add("success-message") // Adiciona classe de sucesso ao elemento de mensagem
 
     // Remove as classes de sucesso e limpa a mensagem após 3 segundos
@@ -163,7 +163,7 @@ loginForm.addEventListener("submit", async (event) => {
       successMessage.textContent = "" 
       // Redireciona o usuário para a página inicial em caso de sucesso
       window.location.href = "/"
-    }, 2000)
+    }, 3000)
 
   } catch (error) {
     // Trata erros inesperados, como falhas de rede

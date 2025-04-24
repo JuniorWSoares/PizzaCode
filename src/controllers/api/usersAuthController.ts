@@ -71,7 +71,7 @@ export class UsersAuthController {
 
             if (!user || !password) {
                 // Lança um erro caso o email ou a senha sejam inválidos.
-                throw new HttpError(401, "Email ou senha inválidos!")
+                throw new HttpError(401, "Ops! Algo está errado com seu e-mail ou senha.")
             }
 
             // Obtém a chave secreta para gerar o token JWT.

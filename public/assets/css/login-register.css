@@ -86,7 +86,7 @@
 .error-message {
     color: var(--red-color); /* Cor vermelha */
     margin-top: 30px; /* Espaçamento superior */
-    font-size: 1rem; /* Tamanho da fonte */
+    font-size: 14px; /* Tamanho da fonte */
     font-weight: 600; /* Texto em negrito */
     text-align: center; /* Centraliza o texto */
     display: block; /* Exibe como bloco */
@@ -95,14 +95,14 @@
 /* Estilo para campos com erro */
 #register-form .error,
 #login-form .error {
-    border: 2px solid var(--red-color); /* Borda vermelha */
+    border: 1px solid var(--red-color); /* Borda vermelha */
 }
 
 /* Estilo para mensagens de sucesso */
 .success-message {
     color: var(--green-color); /* Cor verde */
     margin-top: 30px; /* Espaçamento superior */
-    font-size: 1rem; /* Tamanho da fonte */
+    font-size: 14px; /* Tamanho da fonte */
     font-weight: 600; /* Texto em negrito */
     text-align: center; /* Centraliza o texto */
     display: block; /* Exibe como bloco */
