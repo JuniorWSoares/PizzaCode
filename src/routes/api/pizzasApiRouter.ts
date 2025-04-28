@@ -2,27 +2,28 @@ import express from "express";
 import { PizzasApiController } from "../../controllers/api/pizzasApiController";
 import { upload } from "../../middlewares/upload-middleware";
 import { deleteImageMiddleware, updateImageMiddleware } from "../../middlewares/delete-image-middlewares";
+import { authMiddleware } from "../../middlewares/auth-middleware";
 
 const router = express.Router()
 
 const pizzasApiController = new PizzasApiController()
 
-// Define a rota para criar um novo tipo de pizza, utilizando o middleware de upload para salvar a imagem.
+// Rota para criar um novo tipo de pizza, com upload de imagem
 router.post("/create", upload.single('image'), pizzasApiController.create)
 
-// Define a rota para deletar um tipo de pizza, utilizando o middleware para deletar a imagem associada.
+// Rota para deletar um tipo de pizza, com deleção da imagem associada
 router.post("/delete/:id", deleteImageMiddleware, pizzasApiController.delete)
 
-// Define a rota para atualizar os dados de um tipo pizza, incluindo a possibilidade de alterar a imagem.
+// Rota para atualizar um tipo de pizza, com upload de imagem e remoção da imagem antiga
 router.post("/update/:id", upload.single('image'), updateImageMiddleware, pizzasApiController.update)
 
-// Define a rota para adicionar um novo tamanho a uma pizza.
-router.post("/add-size", pizzasApiController.addSize)
+// Rota para adicionar um novo tamanho a uma pizza, sem upload de imagem
+router.post("/add-size", authMiddleware, pizzasApiController.addSize)
 
-// Define a rota para atualizar o tamanho de uma pizza específica.
+// Rota para atualizar o tamanho de uma pizza específica, sem upload de imagem
 router.post("/update-size/:id", pizzasApiController.updateSize)
 
-// Define a rota para deletar um tamanho específico de uma pizza.
+// Rota para deletar um tamanho específico de uma pizza
 router.post("/delete-size/:id", pizzasApiController.deleteSize)
 
 export = router

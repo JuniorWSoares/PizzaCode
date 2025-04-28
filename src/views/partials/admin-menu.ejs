@@ -61,7 +61,7 @@
 
               <!-- Botão para excluir uma pizza -->
               <form action="api/pizzas/delete/<%= pizzaTypes[i].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esta pizza?')">
-                <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
+                <button class="pizza-delete-button" type="submit"><img src="/images/x.png"></button>
               </form>
 
               <!-- Botão para abrir o formulário de atualização da pizza -->
@@ -70,7 +70,7 @@
                 data-id="<%= pizzaTypes[i].id %>" 
                 data-title="<%= pizzaTypes[i].title %>"
                 data-description="<%= pizzaTypes[i].description %>">
-                <img src="images/atualizar.png">
+                <img src="/images/atualizar.png">
               </button>
             </div>
           </li>
@@ -97,7 +97,6 @@
             <!-- Campo para o ID da pizza -->
             <input type="text" name="pizzaTypeId" id="pizzaTypeId" placeholder="ID da pizza" required>
           </div>
-          <span id="pizza-error-message" class="input-error-message"></span>
           <!-- Botão para enviar o formulário -->
           <button class="pizza-send-button" type="submit">Cadastrar</button>
         </form>
@@ -145,7 +144,7 @@
 
               <!-- Botão para excluir tamanho e preço -->
               <form action="api/pizzas/delete-size/<%= pizzaTypes[i].pizzas[j].id %>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este tamanho?')">
-                <button class="pizza-delete-button" type="submit"><img src="images/x.png"></button>
+                <button class="pizza-delete-button" type="submit"><img src="/images/x.png"></button>
               </form>
 
               <!-- Botão para abrir o formulário de atualização de tamanho e preço -->
@@ -154,7 +153,7 @@
                 data-id="<%= pizzaTypes[i].pizzas[j].id %>"
                 data-size="<%= pizzaTypes[i].pizzas[j].size %>" 
                 data-price="<%= pizzaTypes[i].pizzas[j].price %>">
-                <img src="images/atualizar.png">
+                <img src="/images/atualizar.png">
               </button>
             </div>
           </li>

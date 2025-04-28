@@ -1,43 +1,61 @@
+:root {
+    --gray: #f5f5f5; /* Cinza claro */
+    --gray-100: #e7e7e7; /* Cinza médio claro */
+    --gray-200: #d1d1d1; /* Cinza médio */
+    --gray-400: #888888; /* Cinza escuro claro */
+    --gray-800: #454545; /* Cinza escuro */
+
+    --blue-color: #a7c5d3; /* Azul suave */
+    --size-solor: #2b00ff; /* Azul forte */
+    --orange-color: #ff6600; /* Laranja vivo */
+    --primary-color: #ffa500; /* Amarelo principal */
+    --dark-color: #232323; /* Cinza muito escuro */
+    --black-color: #000; /* Preto puro */
+    --light-color: #F5F5F5; /* Branco acinzentado */
+    --white-color: #fff; /* Branco puro */
+    --red-color: #f00000; /* Vermelho vivo */
+}
+
 #about {
-    display: flex; /* Define um layout flexível */
-    justify-content: space-around; /* Distribui os itens com espaço ao redor */
-    align-items: center; /* Alinha os itens ao centro verticalmente */
-    gap: 1rem; /* Define um espaçamento entre os itens */
-    width: 100%; /* Define a largura como 100% do contêiner pai */
-    height: 80vh; /* Define a altura como 80% da altura da janela de visualização */
-    background-color: var(--black-color); /* Define a cor de fundo usando uma variável CSS */
-    color: var(--white-color); /* Define a cor do texto usando uma variável CSS */
-    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites */
+    display: flex; /* Layout flexível */
+    justify-content: space-around; /* Espaço entre itens */
+    align-items: center; /* Centralizar verticalmente */
+    gap: 1rem; /* Espaço entre elementos */
+    width: 100%; /* Largura total */
+    height: 80vh; /* Altura proporcional */
+    background-color: var(--black-color); /* Fundo preto */
+    color: var(--white-color); /* Texto branco */
+    overflow: hidden; /* Esconde excessos */
 }
 
 #about img {
-    box-shadow: 5px 5px 20px -1px rgba(225, 49, 0, 0.764); /* Adiciona uma sombra ao redor da imagem */
-    border-top-left-radius: 4rem; /* Define bordas arredondadas no canto superior esquerdo */
-    border-bottom-right-radius: 4rem; /* Define bordas arredondadas no canto inferior direito */
-    object-position: center; /* Centraliza o conteúdo da imagem */
-    float: left; /* Faz a imagem flutuar à esquerda */
-    height: 30rem; /* Define a altura da imagem */
-    width: 30rem; /* Define a largura da imagem */
+    box-shadow: 5px 5px 20px -1px rgba(225, 49, 0, 0.764); /* Sombra */
+    border-top-left-radius: 4rem; /* Canto arredondado */
+    border-bottom-right-radius: 4rem; /* Canto arredondado */
+    object-position: center; /* Centraliza imagem */
+    float: left; /* Flutua à esquerda */
+    height: 30rem; /* Altura fixa */
+    width: 30rem; /* Largura fixa */
 }
 
 #about-text-container {
-    display: flex; /* Define um layout flexível */
-    flex-direction: column; /* Organiza os itens em uma coluna */
-    gap: 2rem; /* Define um espaçamento entre os itens */
-    max-width: 1000px; /* Define a largura máxima do contêiner */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Coluna */
+    gap: 2rem; /* Espaço entre textos */
+    max-width: 1000px; /* Largura máxima */
+}
 
-    h2 {
-        font-size: 3rem; /* Define o tamanho da fonte */
-        margin-bottom: 1rem; /* Adiciona um espaçamento inferior */
-        font-family: "Rubik Dirt", system-ui; /* Define a fonte principal e uma alternativa */
-        font-weight: 400; /* Define o peso da fonte */
-        font-style: normal; /* Define o estilo da fonte como normal */
-    }
+#about-text-container h2 {
+    font-size: 3rem; /* Fonte grande */
+    margin-bottom: 1rem; /* Espaço inferior */
+    font-family: "Rubik Dirt", system-ui; /* Fonte principal */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+}
 
-    p {
-        font-size: 2.5rem; /* Define o tamanho da fonte */
-        font-family: "Rochester", cursive; /* Define a fonte principal e uma alternativa cursiva */
-        font-weight: 400; /* Define o peso da fonte */
-        font-style: normal; /* Define o estilo da fonte como normal */
-    }
+#about-text-container p {
+    font-size: 2.5rem; /* Fonte média */
+    font-family: "Rochester", cursive; /* Fonte cursiva */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Estilo normal */
 }

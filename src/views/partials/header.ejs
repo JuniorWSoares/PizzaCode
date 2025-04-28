@@ -30,16 +30,15 @@
         <h3>Login</h3>
         <form id="login-form" action="/auth/login" method="post">
           <!-- Campo para o e-mail -->
-          <input type="email" id="login-email" name="email" placeholder="Digite seu e-mail">
+          <input type="email" id="login-email" name="email" placeholder="Digite seu e-mail" required>
           <!-- Campo para a senha -->
-          <input type="password" id="login-password" name="password" placeholder="Digite sua senha">
+          <input type="password" id="login-password" name="password" placeholder="Digite sua senha" required>
           <!-- Botão para enviar o formulário de login -->
           <button type="submit">Entrar</button>
         </form>
         <!-- Link para redirecionar ao formulário de cadastro -->
         <p>Não tem uma conta? <a href="#" id="show-register">Cadastrar-se</a></p>
         <!-- Mensagem de feedback do login -->
-        <div id="login-message"></div>
       </div>
 
       <!-- Formulário de Cadastro -->
@@ -47,22 +46,21 @@
         <h3>Cadastro</h3>
         <form id="register-form" action="/auth/register" method="post">
           <!-- Campo para o nome completo -->
-          <input type="text" id="name" name="name" placeholder="Nome Completo">
+          <input type="text" id="name" name="name" placeholder="Nome Completo" required>
           <!-- Campo para a data de nascimento -->
-          <input type="date" id="birthdate" name="dayOfBirth">
+          <input type="date" id="birthdate" name="dayOfBirth" required>
           <!-- Campo para o e-mail -->
-          <input type="email" id="register-email" name="email" placeholder="Crie seu e-mail">
+          <input type="email" id="register-email" name="email" placeholder="Crie seu e-mail" required>
           <!-- Campo para a senha -->
-          <input type="password" id="register-password" name="password" placeholder="Crie uma senha">
+          <input type="password" id="register-password" name="password" placeholder="Crie uma senha" required>
           <!-- Campo para o telefone -->
-          <input type="tel" id="phone" name="phone" placeholder="Telefone">
+          <input type="tel" id="phone" name="phone" placeholder="Telefone" required>
           <!-- Botão para enviar o formulário de cadastro -->
           <button type="submit">Cadastrar</button>
         </form>
         <!-- Link para redirecionar ao formulário de login -->
         <p>Já tem uma conta? <a href="#" id="show-login">Fazer login</a></p>
         <!-- Mensagem de feedback do cadastro -->
-        <div id="register-message"></div>
       </div>
 
     </div>

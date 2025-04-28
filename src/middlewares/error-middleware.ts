@@ -1,17 +1,21 @@
 import { ErrorRequestHandler } from "express";
 import { HttpError } from "../errors/HttpError";
+import { PizzasWebController } from "../controllers/web/pizzasWebController";
+
+const pizzasWebController = new PizzasWebController()
 
 // Middleware de tratamento de erros.
 export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
     // Verifica se o erro é um HttpError (erro personalizado).
     if (err instanceof HttpError) {
-        // Redireciona para a página inicial se o status for 403.
-        if (err.status === 403) {
-            return res.redirect("/")
+        res.locals.alert = {message: err.message, status: err.status}
+
+        if(res.locals.user.role === "Admin"){
+            return pizzasWebController.admin(req, res, next)
         }
-        // Retorna o status e a mensagem do erro em formato JSON.
-        res.status(err.status).json({ error: err.message })
-    } 
+
+        return pizzasWebController.index(req, res, next)
+    }
     // Verifica se o erro é uma instância genérica de Error.
     else if (err instanceof Error) {
         // Retorna status 500 com mensagem genérica e detalhes do erro.

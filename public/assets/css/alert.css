@@ -1,0 +1,49 @@
+:root {
+    --gray: #f5f5f5; /* Cinza muito claro */
+    --gray-100: #e7e7e7; /* Cinza claro */
+    --gray-200: #d1d1d1; /* Cinza médio */
+    --gray-400: #888888; /* Cinza escuro claro */
+    --gray-800: #454545; /* Cinza bem escuro */
+
+    --blue-color: #a7c5d3; /* Azul suave */
+    --size-solor: #2b00ff; /* Azul forte */
+    --orange-color: #ff6600; /* Laranja vibrante */
+    --primary-color: #ffa500; /* Amarelo principal */
+    --dark-color: #232323; /* Preto acinzentado */
+    --black-color: #000; /* Preto puro */
+    --light-color: #F5F5F5; /* Branco levemente acinzentado */
+    --white-color: #fff; /* Branco puro */
+    --red-color: #f00000; /* Vermelho forte */
+    --green-color: #438214; /* Verde */
+}
+
+#alert-container{
+    position: fixed; /* Elemento fixo na tela */
+    justify-content: center; /* Centraliza conteúdo horizontalmente */
+    align-items: center; /* Centraliza conteúdo verticalmente */
+    top: -100px; /* Inicia fora da tela */
+    right: 50%; /* Centraliza em relação ao centro */
+    transform: translate(50%, -50%); /* Ajusta o alinhamento */
+    height: auto; /* Altura automática */
+    width: auto; /* Largura automática */
+    padding: 12px 16px; /* Espaçamento interno */
+    background-color: var(--light-color); /* Fundo claro */
+    border-radius: 50px; /* Bordas bem arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    box-shadow: 0 0 10px 2px rgb(0, 0, 0); /* Sombra para destaque */
+    z-index: 100; /* Fica acima dos outros elementos */
+    transition: top 0.6s ease, opacity 0.6s ease; /* Animação suave */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+#alert-container.active {
+    top: 7rem; /* Move o alerta para área visível */
+    opacity: 1; /* Torna o alerta visível */
+}
+
+/* Estilo para campos com erro */
+#register-form .error,
+#login-form .error,
+#pizza-sized-form input.error {
+    border: 2px solid var(--red-color); /* Borda vermelha */
+}

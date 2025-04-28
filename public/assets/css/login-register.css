@@ -1,12 +1,19 @@
 :root {
-    --orange-color: #e65c00; /* Cor laranja para destaques */
-    --primary-color: #ffa500; /* Cor primária (laranja claro) */
-    --dark-color: #232323; /* Cor escura para textos */
-    --light-color: #eaeaea; /* Cor clara para bordas e fundos */
-    --white-color: #fff; /* Cor branca */
-    --black-color: #000; /* Cor preta */
-    --red-color: #ff0000; /* Cor vermelha para erros */
-    --green-color: #13a613; /* Cor verde para mensagens de sucesso */
+    --gray: #f5f5f5; /* Cinza bem claro */
+    --gray-100: #e7e7e7; /* Cinza claro */
+    --gray-200: #d1d1d1; /* Cinza médio */
+    --gray-400: #888888; /* Cinza médio claro */
+    --gray-800: #454545; /* Cinza escuro */
+
+    --blue-color: #a7c5d3; /* Azul claro */
+    --size-solor: #2b00ff; /* Azul escuro para tamanhos */
+    --orange-color: #ff6600; /* Laranja */
+    --primary-color: #ffa500; /* Cor primária (amarelo) */
+    --dark-color: #232323; /* Preto escuro */
+    --black-color: #000; /* Preto */
+    --light-color: #F5F5F5; /* Branco claro */
+    --white-color: #fff; /* Branco */
+    --red-color : #f00000; /* Vermelho */
 }
 
 /* Estilo geral para os contêineres de login e registro */
@@ -80,30 +87,4 @@
 /* Classe para esconder elementos */
 .hidden {
     display: none; /* Oculta o elemento */
-}
-
-/* Estilo para mensagens de erro */
-.error-message {
-    color: var(--red-color); /* Cor vermelha */
-    margin-top: 30px; /* Espaçamento superior */
-    font-size: 14px; /* Tamanho da fonte */
-    font-weight: 600; /* Texto em negrito */
-    text-align: center; /* Centraliza o texto */
-    display: block; /* Exibe como bloco */
-}
-
-/* Estilo para campos com erro */
-#register-form .error,
-#login-form .error {
-    border: 1px solid var(--red-color); /* Borda vermelha */
-}
-
-/* Estilo para mensagens de sucesso */
-.success-message {
-    color: var(--green-color); /* Cor verde */
-    margin-top: 30px; /* Espaçamento superior */
-    font-size: 14px; /* Tamanho da fonte */
-    font-weight: 600; /* Texto em negrito */
-    text-align: center; /* Centraliza o texto */
-    display: block; /* Exibe como bloco */
 }

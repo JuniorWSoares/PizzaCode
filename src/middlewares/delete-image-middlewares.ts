@@ -4,76 +4,55 @@ import { HttpError } from "../errors/HttpError";
 import fs from "node:fs";
 import path from "node:path";
 
-// Define o middleware para deletar uma imagem associada a um registro no banco de dados.
+// Middleware para deletar a imagem associada ao registro no banco de dados.
 export const deleteImageMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        // Obtém o ID do registro a partir dos parâmetros da requisição e o converte para número.
-        const id = Number(req.params.id)
-
-        // Busca no banco de dados o registro correspondente ao ID, selecionando apenas a URL da imagem.
+        const id = Number(req.params.id) // Obtém o ID do registro.
         const record = await prisma.pizzaType.findUnique({
             where: { id },
-            select: { url: true }
-        })
+            select: { url: true } // Obtém a URL da imagem associada ao registro.
+        }) 
 
-        // Caso o registro não seja encontrado, lança um erro 404 indicando que o registro não existe.
-        if (!record) throw new HttpError(404, "Registro nao encontrado.")
+        if (!record) throw new HttpError(404, "Imagem nao encontrada") // Se o registro não existir, gera um erro.
 
-        // Verifica se o registro possui uma URL associada.
         if (record.url) {
-            // Constrói o caminho completo da imagem no sistema de arquivos.
-            const imagePath = path.join(__dirname, "../../public", record.url)
-
-            // Verifica se o arquivo existe no caminho especificado.
+            const imagePath = path.join(__dirname, "../../public", record.url) // Caminho completo da imagem.
             if (fs.existsSync(imagePath)) {
-                // Remove o arquivo do sistema de arquivos.
-                fs.unlinkSync(imagePath)
+                fs.unlinkSync(imagePath) // Remove o arquivo de imagem do sistema de arquivos.
             }
         }
 
-        // Chama o próximo middleware na cadeia.
-        next()
+        next() // Chama o próximo middleware.
     } catch (error) {
-        // Em caso de erro, passa o erro para o próximo middleware de tratamento de erros.
-        next(error)
+        next(error) // Passa o erro para o próximo middleware.
     }
 }
 
+// Middleware para atualizar a imagem associada ao registro no banco de dados.
 export const updateImageMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        // Obtém o ID do registro a partir dos parâmetros da requisição e o converte para número.
-        const id = Number(req.params.id)
-
-        // Busca no banco de dados o registro correspondente ao ID, selecionando apenas a URL da imagem.
+        const id = Number(req.params.id) // Obtém o ID do registro.
         const record = await prisma.pizzaType.findUnique({
             where: { id },
-            select: { url: true }
+            select: { url: true } // Obtém a URL da imagem associada ao registro.
         })
 
         if (!req.file?.filename) {
-            res.locals.record = record
+            res.locals.record = record // Armazena o registro se não houver novo arquivo.
             return next()
         }
 
-        // Caso o registro não seja encontrado, lança um erro 404 indicando que o registro não existe.
-        if (!record) throw new HttpError(404, "Registro nao encontrado.")
+        if (!record) throw new HttpError(404, "Imagem nao encontrada") // Se o registro não existir, gera um erro.
 
-        // Verifica se o registro possui uma URL associada.
         if (record.url) {
-            // Constrói o caminho completo da imagem no sistema de arquivos.
-            const imagePath = path.join(__dirname, "../../public", record.url)
-
-            // Verifica se o arquivo existe no caminho especificado.
+            const imagePath = path.join(__dirname, "../../public", record.url) // Caminho completo da imagem.
             if (fs.existsSync(imagePath)) {
-                // Remove o arquivo do sistema de arquivos.
-                fs.unlinkSync(imagePath)
+                fs.unlinkSync(imagePath) // Remove a imagem antiga.
             }
         }
 
-        // Chama o próximo middleware na cadeia.
-        next()
+        next() // Chama o próximo middleware.
     } catch (error) {
-        // Em caso de erro, passa o erro para o próximo middleware de tratamento de erros.
-        next(error)
+        next(error) // Passa o erro para o próximo middleware.
     }
 }

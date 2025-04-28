@@ -12,26 +12,28 @@
     <script src="/assets/js/registration-script.js" defer></script>
     <script src="/assets/js/order-form-script.js" defer></script>
     <script src="/assets/js/scroll-adjust.js" defer></script>
-    <script src="/assets/js/form-script-error.js" defer></script>
+    <script src="/assets/js/alert.js" defer></script>
 
     <!-- Links para estilos CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/index.css">
-    <link rel="stylesheet" href="/assets/css/admin-style.css">
+    <link rel="stylesheet" href="/assets/css/pizza-admin-panel.css">
     <link rel="stylesheet" href="/assets/css/home.css">
     <link rel="stylesheet" href="/assets/css/menu.css">
     <link rel="stylesheet" href="/assets/css/header-nav.css">
     <link rel="stylesheet" href="/assets/css/user.css">
     <link rel="stylesheet" href="/assets/css/login-register.css">
-    <link rel="stylesheet" href="/assets/css/header-icon.css">
     <link rel="stylesheet" href="/assets/css/cart.css">
-    <link rel="stylesheet" href="/assets/css/order-container.css">
+    <link rel="stylesheet" href="/assets/css/alert.css">
     
     <!-- Ícone da página -->
     <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
   </head>
 
   <body>
+    <!-- Adicione um elemento para armazenar a mensagem de erro -->
+    <div id="alert-container" data-message="<%= alert.message %>" data-status="<%= alert.status %>"></div>
+
     <!-- Cabeçalho da página -->
     <header>
       <nav>

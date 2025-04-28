@@ -1,24 +1,21 @@
-// Importa a biblioteca Zod, que é usada para validação e definição de esquemas de dados.
+// Importa o Zod para validação de dados
 import { z } from "zod";
 
-// Define o esquema para a criação de um tipo de pizza.
-// Este esquema exige que o objeto tenha as propriedades "title" e "description", ambas do tipo string.
+// Esquema para criar tipo de pizza (title e description são strings)
 export const CreatePizzaTypeRequestSchema = z.object({
-    title: z.string(), // O título da pizza, deve ser uma string.
-    description: z.string() // A descrição da pizza, deve ser uma string.
-});
+    title: z.string(), // Título da pizza
+    description: z.string() // Descrição da pizza
+})
 
-// Define o esquema para adicionar um tamanho de pizza.
-// Este esquema exige que o objeto tenha as propriedades "pizzaTypeId" (número), "price" (número) e "size" (enum com valores "P", "M" ou "G").
+// Esquema para adicionar tamanho de pizza (pizzaTypeId, price são números, size é enum)
 export const AddPizzaRequestSchema = z.object({
-    pizzaTypeId: z.coerce.number(), // O ID da pizza, convertido para número se necessário.
-    price: z.coerce.number(), // O preço do tamanho da pizza, convertido para número se necessário.
-    size: z.enum(["P", "M", "G"]) // O tamanho da pizza, deve ser um dos valores "P", "M" ou "G".
-});
+    pizzaTypeId: z.coerce.number(), // ID da pizza
+    price: z.coerce.number(), // Preço do tamanho
+    size: z.enum(["P", "M", "G"]) // Tamanho da pizza
+})
 
-// Define o esquema para atualizar o tamanho de uma pizza.
-// Este esquema exige que o objeto tenha as propriedades "price" (número) e "size" (enum com valores "P", "M" ou "G").
+// Esquema para atualizar tamanho de pizza (price é número, size é enum)
 export const UpdatePizzaRequestSchema = z.object({
-    price: z.coerce.number(), // O novo preço do tamanho da pizza, convertido para número se necessário.
-    size: z.enum(["P", "M", "G"]) // O tamanho da pizza, deve ser um dos valores "P", "M" ou "G".
-});
+    price: z.coerce.number(), // Novo preço
+    size: z.enum(["P", "M", "G"]) // Novo tamanho
+})
