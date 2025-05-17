@@ -20,8 +20,8 @@ export class OrdersApiController {
         }
     }
 
-    // Método "addingToOrder": Cria ou atualiza um pedido
-    addingToOrder: Handler = async (req, res, next) => {
+    // Método "addToOrder": Cria ou atualiza um pedido
+    addToOrder: Handler = async (req, res, next) => {
         try {
             const pizza = CreateOrderRequestSchema.parse(JSON.parse(req.body.pizza)); // Valida dados da pizza
             const user: User = res.locals.user // Dados do usuário autenticado
