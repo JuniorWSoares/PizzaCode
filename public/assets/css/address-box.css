@@ -1,0 +1,99 @@
+:root {
+    --gray: #f2efef; /* Cinza muito claro */
+    --gray-100: #e7e7e7; /* Cinza claro */
+    --gray-200: #d1d1d1; /* Cinza médio */
+    --gray-400: #888888; /* Cinza escuro claro */
+    --gray-800: #454545; /* Cinza bem escuro */
+
+    --dark-blue-color:#1c3a48;
+    --light-blue-color: #a7c5d398;
+    --blue-color: #a7c5d3; /* Azul suave */
+    --strong-blue-color: #005780; /* Azul forte */
+    --orange-color: #ff6600; /* Laranja vibrante */
+    --primary-color: #ffa500; /* Amarelo principal */
+    --dark-color: #232323; /* Preto acinzentado */
+    --black-color: #000; /* Preto puro */
+    --light-color: #F5F5F5; /* Branco levemente acinzentado */
+    --white-color: #fff; /* Branco puro */
+    --red-color: #f00000; /* Vermelho forte */
+    --light-red-color: #ff2c2c35;
+    --strong-red-color: #b00000;
+    --green-color: #008f37ed; /* Verde */
+    --light-green-color: #0de75526;
+    --strong-green-color: #005d2b;
+}
+
+#address-saved-container{
+    min-height: max-content;
+    width: 18.75rem;
+    padding: 1rem .25rem;
+    background-color: var(--white-color);
+    color: var(--gray-800);
+}
+
+#address-saved-container h3{
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.address-list{
+    border: 3px solid var(--gray);
+    padding: .5rem;
+    border-radius: 4px;
+    list-style: none;
+    display: grid;
+    gap: .5rem;
+}
+
+.address-item {
+    word-break: break-word;      
+    max-width: 100%;             
+    min-width: 0;              
+}
+
+.address-item:first-child{
+    font-weight: 700;
+}
+
+.address-buttons{
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(2, 1fr);
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.delete-address{
+    background-color: var(--light-red-color);
+    border: 1px solid var(--strong-red-color);
+    border-radius: 4px;
+    color: var(--strong-red-color);
+    font-weight: 700;
+    transition: .3s;
+    font-size: 1rem;
+}
+
+.delete-address:hover{
+    border-color: var(--red-color);
+    color: var(--red-color);
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.update-address{
+    background-color: var(--blue-color);
+    border: 1px solid var(--dark-blue-color);
+    border-radius: 4px;
+    color: var(--dark-blue-color);
+    font-weight: 700;
+    transition: .3s;
+    font-size: 1rem;
+}
+
+.update-address:hover{
+    border-color: var(--strong-blue-color);
+    color: var(--strong-blue-color);
+    cursor: pointer;
+    transform: scale(1.02);
+}

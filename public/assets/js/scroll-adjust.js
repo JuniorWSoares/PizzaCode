@@ -11,7 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     // Verifica se o elemento de destino existe na página
     if (targetElement) {
-      const offset = 50 // Define um ajuste de 50px para parar acima do elemento
+      const offset = 60 // Define um ajuste de 50px para parar acima do elemento
       const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY // Calcula a posição do elemento em relação ao topo da página
       const offsetPosition = elementPosition - offset // Aplica o ajuste de 50px
 

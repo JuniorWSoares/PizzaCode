@@ -6,7 +6,7 @@
     --gray-800: #454545; /* Cinza escuro */
 
     --blue-color: #a7c5d3; /* Azul claro */
-    --size-solor: #2b00ff; /* Azul escuro para tamanhos */
+    --strong-blue-color: #2b00ff; /* Azul escuro para tamanhos */
     --orange-color: #ff6600; /* Laranja */
     --primary-color: #ffa500; /* Cor primária (amarelo) */
     --dark-color: #232323; /* Preto escuro */
@@ -26,8 +26,12 @@
     background-size: cover; /* Faz a imagem cobrir todo o contêiner */
     background-position: top; /* Posiciona a imagem no topo */
     color: var(--white-color); /* Define a cor do texto como branco */
-    min-height: 82vh; /* Define a altura mínima como 82% da altura da janela de visualização */
-    padding: 10rem 0; /* Adiciona espaçamento interno vertical */
+    min-height: 94vh; /* Define a altura mínima como 82% da altura da janela de visualização */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15rem;
     text-align: center; /* Centraliza o texto */
 }
 

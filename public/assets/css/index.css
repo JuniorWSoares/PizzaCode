@@ -22,7 +22,7 @@
     --gray-800: #454545; /* Cinza escuro */
 
     --blue-color: #a7c5d3; /* Azul claro */
-    --size-solor: #2b00ff; /* Azul escuro para tamanhos */
+    --strong-blue-color: #2b00ff; /* Azul escuro para tamanhos */
     --orange-color: #ff6600; /* Laranja */
     --primary-color: #ffa500; /* Cor primária (amarelo) */
     --dark-color: #232323; /* Preto escuro */
@@ -62,7 +62,7 @@ h2 {
 }
 
 /* Estilo para seções específicas, exceto as com IDs "home" e "contact" */
-section:not(#home, #contact) {
+section:not(#home, #contact, #orders) {
     padding: 4rem; /* Espaçamento interno */
     text-align: center; /* Centraliza o texto */
 }

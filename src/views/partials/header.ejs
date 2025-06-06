@@ -22,7 +22,7 @@
           </form>
         <% } %>
         <!-- Link para a seção de endereços -->
-        <a href="#enderecos"><i class="fas fa-map-marker-alt"></i> Endereços</a>
+        <a id="address-link" href="#enderecos"><i class="fas fa-map-marker-alt"></i> Endereços</a>
       </div>
 
       <!-- Formulário de Login -->
@@ -62,6 +62,30 @@
         <p>Já tem uma conta? <a href="#" id="show-login">Fazer login</a></p>
         <!-- Mensagem de feedback do cadastro -->
       </div>
+
+      <% if(true) {%>
+        <div id="address-saved-container" class="hidden">
+          <h3>Endereço</h3>
+
+          <ul class="address-list">
+            <li class="address-item">Campo Leal SN</li>
+            <li class="address-item">CEP: 28637000</li>
+            <li class="address-item">Sumidouro - RJ</li>
+            <li class="address-item">Junior Soares</li>
+            <li class="address-item">22992266180</li>
+            <li class="address-item">Complemento...</li>
+          </ul>
+
+          <div class="address-buttons">
+            <button class="delete-address">Excluir</button>
+            <button class="update-address">Atualizar</button>
+          </div>
+        </div>
+      <% } else if(false) { %>
+
+      <% } else { %>
+
+      <% } %>
 
     </div>
   </div>

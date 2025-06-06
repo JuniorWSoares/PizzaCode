@@ -2,6 +2,10 @@
 document.getElementById("user-icon").addEventListener("click", function() {
   // Alterna a classe "show" no menu do usuário para exibir ou ocultar o menu
   document.getElementById("user-menu").classList.toggle("show")
+  document.getElementById("login-form-container").classList.add("hidden")
+  document.getElementById("menu-options").classList.remove("hidden")
+  document.getElementById("register-form-container").classList.add("hidden")
+  document.getElementById("address-saved-container").classList.add("hidden")
 })
 
 // Adiciona um evento de clique ao botão de login
