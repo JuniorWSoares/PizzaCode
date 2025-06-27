@@ -1,4 +1,4 @@
-**Alunos:** José Júnior e Walha.
+**Alunos:** José Júnior e Watilha.
 
 ## Relato das Lições Aprendidas – Projeto Front-End “PizzaCode”
 
