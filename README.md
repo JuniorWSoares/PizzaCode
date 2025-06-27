@@ -1,5 +1,4 @@
-# Grupo 13  
-**Alunos:** José Júnior (06012771), Walha (06012734)
+**Alunos:** José Júnior e Walha.
 
 ## Relato das Lições Aprendidas – Projeto Front-End “PizzaCode”
 
